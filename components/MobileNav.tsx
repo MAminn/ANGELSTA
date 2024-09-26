@@ -17,8 +17,8 @@ const MobileNav = () => {
               <ul className='flex flex-col mt-12 items-center'>
                 {navLinks.map((link) => (
                   <Link
-                    key={link.id}
-                    href={link.route}
+                    key={link.label}
+                    href={link.path}
                     className='pt-16 text-2xl'>
                     {link.label}
                   </Link>
