@@ -1,23 +1,84 @@
+interface DropdownItem {
+  label: string;
+  path: string;
+}
+
+interface NavLink {
+  label: string;
+  path: string;
+  dropdown?: DropdownItem[];
+}
+
+export const navLinks: NavLink[] = [
+  {
+    label: "For Investors",
+    path: "/investor",
+    dropdown: [
+      { label: "Our Fund", path: "/capital" },
+      { label: "My Portfolio", path: "/portfolio/investments" },
+    ],
+  },
+  {
+    label: "For Startups",
+    path: "/startup",
+  },
+  {
+    label: "Market Analysis",
+    path: "/marketAnalysis",
+  },
+  {
+    label: "About Us",
+    path: "/aboutUs",
+  },
+];
+
 export const sidebarLinks = [
   {
     imgURL: "/icons/home.svg",
-    route: "/",
-    label: "Home",
+    path: "/",
+    label: "AI financial Valuation",
   },
   {
     imgURL: "/icons/dollar-circle.svg",
-    route: "/my-banks",
-    label: "My Banks",
+    path: "/market-analysis",
+    label: "Market Analysis & Industrial analysis",
   },
   {
     imgURL: "/icons/transaction.svg",
-    route: "/transaction-history",
-    label: "Transaction History",
+    path: "/secondary-marketplace",
+    label: "Secondary Marketplace",
   },
   {
     imgURL: "/icons/money-send.svg",
-    route: "/payment-transfer",
-    label: "Transfer Funds",
+    path: "/syndicate-fund",
+    label: "Syndicate fund",
+  },
+  {
+    imgURL: "/icons/money-send.svg",
+    path: "/blockchain",
+    label: "Blockchain",
+  },
+];
+export const sidebarInvestorLinks = [
+  {
+    imgURL: "/icons/home.svg",
+    path: "/portfolio/investments",
+    label: "Investments",
+  },
+  {
+    imgURL: "/icons/dollar-circle.svg",
+    path: "/portfolio/following",
+    label: "Following",
+  },
+  {
+    imgURL: "/icons/transaction.svg",
+    path: "/portfolio/analytics",
+    label: "Analytics",
+  },
+  {
+    imgURL: "/icons/money-send.svg",
+    path: "/portfolio/taxcenter",
+    label: "Tax Center",
   },
 ];
 

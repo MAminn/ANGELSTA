@@ -6,10 +6,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-          <main>
-              SIDEBAR
-              {children}
-     </main>
+      <main className="flex flex-col h-full w-full">
+        {children}
+      </main>
     </html>
   );
 }
