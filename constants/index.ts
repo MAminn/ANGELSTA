@@ -30,6 +30,14 @@ export const navLinks: NavLink[] = [
     label: "About Us",
     path: "/aboutUs",
   },
+  {
+    label: "Login",
+    path: "/login",
+  },
+  {
+    label: "Sign Up",
+    path: "/register",
+  },
 ];
 
 export const sidebarLinks = [
