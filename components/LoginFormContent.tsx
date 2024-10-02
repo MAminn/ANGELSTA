@@ -89,7 +89,7 @@ const LoginFormContent = (props: LoginFormContentProps) => {
           >
             {loading ? "Logging in..." : "Login"}
           </button>
-          <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
+          <p className="text-red-700 text-[16px] mb-4">{error && error}</p>
         </form>
 
         <div className="text-center text-gray-500 mt-4">- OR -</div>
