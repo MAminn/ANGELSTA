@@ -4,6 +4,8 @@ import Link from "next/link";
 import MobileNav from "./MobileNav";
 import { signOut } from "next-auth/react";
 import { Session } from "next-auth";
+import Image from "next/image";
+import mainLogo from "@/public/images/logo-trans.png";
 
 interface NavMenuProps {
   session: Session | null;
@@ -22,7 +24,13 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
       <>
         <div className="flex justify-between items-center h-24 max-w-[1240px] w-full px-4 py-12 bg-white text-[#000000] relative">
           <Link href="/" className="font-bold text-4xl">
-            ANGELSTA
+            <Image
+              src={mainLogo}
+              alt="mainlogo"
+              width={350}
+              height={350}
+              className="w-full h-full"
+            />
           </Link>
           <ul className="flex max-md:hidden">
             {navLinks.slice(0, 4).map((link, index) => (
@@ -58,9 +66,15 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
   } else {
     return (
       <>
-        <div className="flex justify-between items-center h-24 max-w-[1240px] w-full px-4 py-12 bg-white text-[#000000] relative">
+        <div className="flex justify-around items-center h-24 w-full px-4 py-12 bg-white text-[#000000] relative">
           <Link href="/" className="font-bold text-4xl">
-            ANGELSTA
+            <Image
+              src={mainLogo}
+              alt="mainlogo"
+              width={350}
+              height={350}
+              className="w-full h-full"
+            />
           </Link>
           <ul className="flex max-md:hidden">
             {navLinks.map((link, index) => (

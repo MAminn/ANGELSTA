@@ -12,19 +12,17 @@ export default async function LayoutForm({
   }
 
   return (
-    <html lang="en">
-      <body className={` antialiased `}>
-        <div className=" flex justify-around items-center bg-[#1E2D3D] w-full h-[80px] text-[#888888]">
-          <div className=" flex justify-around items-center  w-[550px] h-full  max-lg:hidden ">
-            <div>Your startup</div>
-            <span>{">"}</span>
-            <div>Personal investment</div>
-            <span>{">"}</span>
-            <div>Resources</div>
-          </div>
+    <section className={` antialiased `}>
+      <div className=" flex justify-around items-center fixed top-0 left-0 bg-[#1E2D3D] w-full h-[80px] text-[#888888]">
+        <div className=" flex justify-around items-center  w-[550px] h-full  max-lg:hidden ">
+          <div>Your startup</div>
+          <span>{">"}</span>
+          <div>Personal investment</div>
+          <span>{">"}</span>
+          <div>Resources</div>
         </div>
-        {children}
-      </body>
-    </html>
+      </div>
+      {children}
+    </section>
   );
 }

@@ -57,7 +57,7 @@ const MarketAnalysis = () => {
           <div className=" btn-custom-sm-screen">
             <button
               onClick={toggleMenu}
-              className="btn-custom transition-all duration-300 ease-in-out hover:bg-white hover:text-[#0160ff] px-5 py-1.5 "
+              className="btn-custom transition-all duration-300 ease-in-out hover:bg-[#4c7375] hover:text-white px-5 py-1.5 "
             >
               {isOpen ? "Start my free trial" : "Start my free trial"}
             </button>
@@ -185,7 +185,7 @@ const MarketAnalysis = () => {
       {/* Part 2 of the page */}
       <div className=" flex-col justify-center items-center gap-4 pt-[80px] bg-[#ebf5ff] w-full ml-0 h-[500px] max-lg:h-screen max-lg:mb-[50px]  ">
         <div className=" flex-col justify-center items-center gap-6">
-          <h1 className="primary-color text-center mb-[16px] text-[2.25rem] font-extrabold leading-[2.75rem] max-lg:text-[25px]">
+          <h1 className="primary-color text-center mb-[16px] text-[2.25rem] text-[#4c7375] font-extrabold leading-[2.75rem] max-lg:text-[25px]">
             Solutions
           </h1>
           <p className=" text-center mb-[16px] primary-color max-w-[1150px] ml-auto mr-auto max-lg:max-w-[350px]">
@@ -204,7 +204,7 @@ const MarketAnalysis = () => {
       {/* part 3 */}
       <div className=" flex-col justify-center items-center gap-4 pt-[80px] bg-white w-full ml-0 h-[600px] max-lg:mb-[200px] ">
         <div className=" flex-col justify-center items-center gap-6">
-          <h1 className="primary-color text-center mb-[16px] text-[2.25rem] font-extrabold leading-[2.75rem] max-lg:text-[25px]">
+          <h1 className="primary-color text-center mb-[16px] text-[2.25rem] text-[#4c7375] font-extrabold leading-[2.75rem] max-lg:text-[25px]">
             Use cases
           </h1>
           <p className=" text-center mb-[60px] primary-color max-w-[1150px] ml-auto mr-auto max-lg:max-w-[350px]">
@@ -217,7 +217,7 @@ const MarketAnalysis = () => {
             <div className=" flex-col justify-center items-center gap-4  w-[50%] h-[210px] max-lg:w-[100%] max-lg:px-[20px]  ">
               <ul className=" flex-col justify-center items-center max-w-[525px] gap-10 max-lg:max-w-[100%] ">
                 <Link href="" className=" max-lg:w-full">
-                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#0160ff] hover:text-white hover:translate-x-3 group">
+                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#87bab0] hover:text-white hover:translate-x-3 group">
                     <div className="flex justify-between w-full items-center px-1">
                       <p className="transition-transform duration-300 ease-in-out group-hover:translate-x-3">
                         Benchmarking
@@ -229,7 +229,7 @@ const MarketAnalysis = () => {
                   </li>
                 </Link>
                 <Link href="" className="">
-                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#0160ff] hover:text-white hover:translate-x-3 group">
+                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#87bab0] hover:text-white hover:translate-x-3 group">
                     <div className="flex justify-between w-full items-center px-1">
                       <p className="transition-transform duration-300 ease-in-out group-hover:translate-x-3">
                         Business Development
@@ -241,7 +241,7 @@ const MarketAnalysis = () => {
                   </li>
                 </Link>
                 <Link href="" className="">
-                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#0160ff] hover:text-white hover:translate-x-3 group">
+                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#87bab0] hover:text-white hover:translate-x-3 group">
                     <div className="flex justify-between w-full items-center px-1">
                       <p className="transition-transform duration-300 ease-in-out group-hover:translate-x-3">
                         Competitive Intelligence
@@ -253,7 +253,7 @@ const MarketAnalysis = () => {
                   </li>
                 </Link>
                 <Link href="" className="">
-                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#0160ff] hover:text-white hover:translate-x-3 group">
+                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#87bab0] hover:text-white hover:translate-x-3 group">
                     <div className="flex justify-between w-full items-center px-1">
                       <p className="transition-transform duration-300 ease-in-out group-hover:translate-x-3">
                         Due Diligence
@@ -269,7 +269,7 @@ const MarketAnalysis = () => {
             <div className=" flex-col justify-center items-center gap-4  w-[50%] h-[210px] max-lg:w-[100%] max-lg:px-[20px] ">
               <ul className=" flex-col justify-center items-center max-w-[525px] gap-10 max-lg:max-w-[100%] ">
                 <Link href="" className="">
-                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#0160ff] hover:text-white hover:translate-x-3 group">
+                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#87bab0] hover:text-white hover:translate-x-3 group">
                     <div className="flex justify-between w-full items-center px-1">
                       <p className="transition-transform duration-300 ease-in-out group-hover:translate-x-3">
                         Earnings Analysis
@@ -281,7 +281,7 @@ const MarketAnalysis = () => {
                   </li>
                 </Link>
                 <Link href="" className="">
-                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#0160ff] hover:text-white hover:translate-x-3 group">
+                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#87bab0] hover:text-white hover:translate-x-3 group">
                     <div className="flex justify-between w-full items-center px-1">
                       <p className="transition-transform duration-300 ease-in-out group-hover:translate-x-3">
                         Fundamental Research
@@ -293,7 +293,7 @@ const MarketAnalysis = () => {
                   </li>
                 </Link>
                 <Link href="" className="">
-                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#0160ff] hover:text-white hover:translate-x-3 group">
+                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#87bab0] hover:text-white hover:translate-x-3 group">
                     <div className="flex justify-between w-full items-center px-1">
                       <p className="transition-transform duration-300 ease-in-out group-hover:translate-x-3">
                         Market Landscaping
@@ -305,7 +305,7 @@ const MarketAnalysis = () => {
                   </li>
                 </Link>
                 <Link href="" className="">
-                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#0160ff] hover:text-white hover:translate-x-3 group">
+                  <li className="custom-li transition-transform duration-300 ease-in-out hover:bg-[#87bab0] hover:text-white hover:translate-x-3 group">
                     <div className="flex justify-between w-full items-center px-1">
                       <p className="transition-transform duration-300 ease-in-out group-hover:translate-x-3">
                         Private Market Intelligence
@@ -323,7 +323,7 @@ const MarketAnalysis = () => {
       </div>
       <div className="flex-col justify-center items-center gap-4 pt-[80px] bg-[#ebf5ff] w-full ml-0 h-[1200px] max-lg:h-[2720px] ">
         <div className="flex-col justify-center items-center gap-6 ">
-          <h1 className="primary-color text-center mb-[16px] text-[2.25rem] font-extrabold leading-[2.75rem] max-lg:text-[25px]">
+          <h1 className="primary-color text-center mb-[16px] text-[2.25rem] text-[#4c7375] font-extrabold leading-[2.75rem] max-lg:text-[25px]">
             Industries
           </h1>
           <div className=" flex justify-center items-center gap-16 ml-auto mr-auto max-lg:flex-col ">
@@ -384,7 +384,7 @@ const MarketAnalysis = () => {
           </div>
         </div>
       </div>
-      <div className="flex-col relative justify-center items-center gap-4 pt-[80px] bg-[#001765] w-full ml-0 h-[350px] max-lg:z-[-2] ">
+      <div className="flex-col relative justify-center items-center gap-4 pt-[80px] bg-[#0b272d] w-full ml-0 h-[350px] max-lg:z-[-2] ">
         <div className="flex justify-center items-start h-full ">
           <div className=" bottom-0 left-0 absolute  max-lg:z-[-1]">
             <svg
@@ -451,7 +451,7 @@ const MarketAnalysis = () => {
             <div className=" flex mt-[50px] justify-center items-center">
               <Link
                 href=""
-                className="btn-custom px-5 py-1.5 transition-all duration-300 ease-in-out hover:bg-white hover:text-[#0160ff] "
+                className=" px-5 py-3 transition-all duration-300 ease-in-out hover:bg-white hover:text-[#0b272d] text-[#fefefe] no-underline font-semibold bg-[#4c7375] rounded-[4px] "
               >
                 Start my free trial
               </Link>

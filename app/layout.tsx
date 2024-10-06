@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import NavMenu from "@/components/NavMenu";
 import SessionProvidor from "@/utils/SessionProvider";
 import { auth } from "@/auth";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "400", "700", "900"], // Specify individual weights
+  variable: "--font-montserrat",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"], // Specify individual weights
+  variable: "--font-playfair-display",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default async function GlobalLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -34,11 +34,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} ${playfairDisplay.variable} antialiased`}
       >
         <SessionProvidor session={session}>
           <NavMenu session={session} />
-
           {children}
         </SessionProvidor>
       </body>

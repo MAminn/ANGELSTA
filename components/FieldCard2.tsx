@@ -22,12 +22,12 @@ const FieldCard2: React.FC<FlipCardProps> = ({
           className || ""
         }`}
       >
-        <div className="w-[50px] h-[50px] rounded-[50%] bg-[#001765] flex flex-wrap items-center justify-center mt-8 text-white max-lg:absolute max-lg:top-[-60px] max-lg:z-10">
+        <div className="w-[50px] h-[50px] rounded-[50%] bg-[#0b272d] flex flex-wrap items-center justify-center mt-8 text-white max-lg:absolute max-lg:top-[-60px] max-lg:z-10">
           {icon}
         </div>
         <div className=" flex-col justify-start max-lg:justify-center items-center ">
           {/* Main title */}
-          <h3 className="max-w-[240px] text-[18px] font-bold leading-[22px] uppercase mt-8  max-lg:text-center max-lg:max-w-[500px] ">
+          <h3 className="max-w-[240px] text-[18px] font-bold leading-[22px]  uppercase mt-8  max-lg:text-center max-lg:max-w-[500px] ">
             {title || "Default Title"}
           </h3>
           <p className=" max-w-[420px] max-h-[70px] text-[1rem] leading-[22px] mt-4 max-lg:text-center">
@@ -37,7 +37,7 @@ const FieldCard2: React.FC<FlipCardProps> = ({
           {/* Learn More Button */}
           <Link
             href=""
-            className="absolute bottom-[10px] flex transition-all group duration-200 ease-in-out text-[#0160ff] px-3 py-2 text-sm rounded z-20 max-lg:left-[35%]"
+            className="absolute bottom-[10px] flex transition-all group duration-200 ease-in-out text-[#0b272d] px-3 py-2 text-sm rounded z-20 max-lg:left-[35%]"
           >
             <div className=" flex transition-transform duration-200 ease-in-out font-bold  ">
               Learn More{" "}
