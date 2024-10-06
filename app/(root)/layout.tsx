@@ -1,11 +1,7 @@
-export default function RootLayout({
+export default function RootPagesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <main className="flex flex-col h-full w-full">{children}</main>
-    </html>
-  );
+  return <section className="flex flex-col h-full w-full">{children}</section>;
 }

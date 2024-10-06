@@ -19,7 +19,7 @@ const FlipCard: React.FC<FlipCardText> = ({ title, className }) => {
         </h3>
 
         {/* Sliding Bar from the bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-[5px] bg-[#0160ff] transition-all duration-200 ease-in-out group-hover:h-full"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[5px] bg-[#0b272d] transition-all duration-200 ease-in-out group-hover:h-full"></div>
 
         {/* Learn More Button */}
         <button className="absolute bottom-[10px] opacity-0 transition-all duration-200 ease-in-out group-hover:opacity-100 group-hover:bottom-[30px]  text-white px-3 py-2 text-sm rounded z-20">

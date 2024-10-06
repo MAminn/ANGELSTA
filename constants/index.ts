@@ -83,11 +83,11 @@ export const sidebarInvestorLinks = [
     path: "/portfolio/analytics",
     label: "Analytics",
   },
-  {
-    imgURL: "/icons/money-send.svg",
-    path: "/portfolio/taxcenter",
-    label: "Tax Center",
-  },
+  // {
+  //   imgURL: "/icons/money-send.svg",
+  //   path: "/portfolio/taxcenter",
+  //   label: "Tax Center",
+  // },
 ];
 
 // good_user / good_password - Bank of America

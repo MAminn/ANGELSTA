@@ -22,7 +22,7 @@ export default async function RootLayout({
         <Sidebar title="Portfolio" links={sidebarInvestorLinks} />
 
         <div className="flex size-full flex-col">
-          <div className="root-layout">
+          <div className="root-layout fixed top-0 left-0 w-full h-[100px] bg-[#1E2D3D]">
             <Image src="/icons/logo.svg" width={30} height={30} alt="logo" />
             <div>
               <MobileNav />
