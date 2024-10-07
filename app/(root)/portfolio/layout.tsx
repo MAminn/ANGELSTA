@@ -25,7 +25,7 @@ export default async function RootLayout({
           <div className="root-layout fixed top-0 left-0 w-full h-[100px] bg-[#1E2D3D]">
             <Image src="/icons/logo.svg" width={30} height={30} alt="logo" />
             <div>
-              <MobileNav />
+              <MobileNav session={session} />
             </div>
           </div>
           {children}
