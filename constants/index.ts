@@ -1,42 +1,49 @@
 interface DropdownItem {
-  label: string;
+  name: string;
   path: string;
 }
 
 interface NavLink {
-  label: string;
+  name: string;
   path: string;
-  dropdown?: DropdownItem[];
+  submenu: boolean;
+  sublinks?: DropdownItem[];
 }
 
-export const navLinks: NavLink[] = [
+export const links: NavLink[] = [
   {
-    label: "For Investors",
-    path: "/investor",
-    dropdown: [
-      { label: "Our Fund", path: "/capital" },
-      { label: "My Portfolio", path: "/portfolio/investments" },
+    name: "For Investors",
+    path: "/capital",
+    submenu: true,
+    sublinks: [
+      { name: "Our Fund", path: "/capital" },
+      { name: "My Portfolio", path: "/portfolio/investments" },
     ],
   },
   {
-    label: "For Startups",
+    name: "For Startups",
     path: "/startup",
+    submenu: false,
   },
   {
-    label: "Market Analysis",
+    name: "Market Analysis",
     path: "/marketAnalysis",
+    submenu: false,
   },
   {
-    label: "About Us",
+    name: "About Us",
     path: "/aboutUs",
+    submenu: false,
   },
   {
-    label: "Login",
+    name: "Login",
     path: "/login",
+    submenu: false,
   },
   {
-    label: "Sign Up",
+    name: "Sign Up",
     path: "/register",
+    submenu: false,
   },
 ];
 
