@@ -1,108 +1,33 @@
-"use client";
-import { links } from "@/constants";
-import Link from "next/link";
-import MobileNav from "./MobileNav";
-import { signOut } from "next-auth/react";
-import { Session } from "next-auth";
 import Image from "next/image";
+import MobileNav from "./MobileNav";
+import NavLinks from "./NavLinks";
+import { auth } from "@/auth";
+import Link from "next/link";
 import mainLogo from "@/public/images/logo-trans.png";
 
-interface NavMenuProps {
-  session: Session | null;
-}
+// import { useState } from "react";
 
-const NavMenu: React.FC<NavMenuProps> = (props) => {
-  // const [dropdownOpen, setDropdownOpen] = useState<number | null>(null);
-
-  // const toggleDropdown = (index: number) => {
-  //   setDropdownOpen(dropdownOpen === index ? null : index);
-  // };
-  const session = props.session;
-
-  if (session) {
-    return (
-      <>
-        <div className='flex justify-between items-center h-24 max-w-[1240px] w-full px-4 py-12 bg-white text-[#000000] relative'>
-          <Link href='/' className='font-bold text-4xl'>
-            <Image
-              src={mainLogo}
-              alt='mainlogo'
-              width={350}
-              height={350}
-              className='w-full h-full'
-            />
-          </Link>
-          <ul className='flex max-md:hidden'>
-            {links.slice(0, 4).map((link, index) => (
-              <li key={index} className='relative group'>
-                <Link
-                  href={link.path}
-                  className='text-[#000]  px-6 py-4 rounded'>
-                  {link.name}
-                </Link>
-                {link.sublinks && (
-                  <ul className='absolute hidden group-hover:block bg-white text-gray-800 left-0 mt-2 p-2 rounded shadow-lg'>
-                    {link.sublinks.map((submenu, subIndex) => (
-                      <li key={subIndex}>
-                        <Link
-                          href={submenu.path}
-                          className='block px-4 py-2 hover:bg-gray-200'>
-                          {submenu.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-            <button onClick={() => signOut()}>Sign Out</button>
-          </ul>
-          <MobileNav />
-        </div>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <div className='flex justify-around items-center h-24 w-full px-4 py-12 bg-white text-[#000000] relative'>
-          <Link href='/' className='font-bold text-4xl'>
-            <Image
-              src={mainLogo}
-              alt='mainlogo'
-              width={350}
-              height={350}
-              className='w-full h-full'
-            />
-          </Link>
-          <ul className='flex max-md:hidden'>
-            {links.map((link, index) => (
-              <li key={index} className='relative group'>
-                <Link
-                  href={link.path}
-                  className='text-[#000]  px-6 py-4 rounded'>
-                  {link.name}
-                </Link>
-                {link.sublinks && (
-                  <ul className='absolute hidden group-hover:block bg-white text-gray-800 left-0 mt-2 p-2 rounded shadow-lg'>
-                    {link.sublinks.map((submenu, subIndex) => (
-                      <li key={subIndex}>
-                        <Link
-                          href={submenu.path}
-                          className='block px-4 py-2 hover:bg-gray-200'>
-                          {submenu.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-          <MobileNav />
-        </div>
-      </>
-    );
-  }
+const NavMenu: React.FC = async () => {
+  const session = await auth()
+  return (
+    <nav className='bg-white pr-8'>
+      <div className='flex justify-between items-center h-24 max-w-[1240px] w-full px-4 py-12 bg-white text-[#000000] relative'>
+        <Link href='/' className='font-bold text-4xl'>
+          <Image
+            src={mainLogo}
+            alt='mainlogo'
+            width={350}
+            height={350}
+            className='w-full h-full'
+          />
+        </Link>
+        <ul className='md:flex hidden uppercase items-center gap-8'>
+          <NavLinks session={session} />
+        </ul>
+        <MobileNav session={session} />
+      </div>
+    </nav>
+  );
 };
 
 export default NavMenu;
