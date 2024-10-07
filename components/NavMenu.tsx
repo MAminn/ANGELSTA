@@ -1,5 +1,5 @@
 "use client";
-import { navLinks } from "@/constants";
+import { links } from "@/constants";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
 import { signOut } from "next-auth/react";
@@ -22,34 +22,32 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
   if (session) {
     return (
       <>
-        <div className="flex justify-between items-center h-24 max-w-[1240px] w-full px-4 py-12 bg-white text-[#000000] relative">
-          <Link href="/" className="font-bold text-4xl">
+        <div className='flex justify-between items-center h-24 max-w-[1240px] w-full px-4 py-12 bg-white text-[#000000] relative'>
+          <Link href='/' className='font-bold text-4xl'>
             <Image
               src={mainLogo}
-              alt="mainlogo"
+              alt='mainlogo'
               width={350}
               height={350}
-              className="w-full h-full"
+              className='w-full h-full'
             />
           </Link>
-          <ul className="flex max-md:hidden">
-            {navLinks.slice(0, 4).map((link, index) => (
-              <li key={index} className="relative group">
+          <ul className='flex max-md:hidden'>
+            {links.slice(0, 4).map((link, index) => (
+              <li key={index} className='relative group'>
                 <Link
                   href={link.path}
-                  className="text-[#000]  px-6 py-4 rounded"
-                >
-                  {link.label}
+                  className='text-[#000]  px-6 py-4 rounded'>
+                  {link.name}
                 </Link>
-                {link.dropdown && (
-                  <ul className="absolute hidden group-hover:block bg-white text-gray-800 left-0 mt-2 p-2 rounded shadow-lg">
-                    {link.dropdown.map((submenu, subIndex) => (
+                {link.sublinks && (
+                  <ul className='absolute hidden group-hover:block bg-white text-gray-800 left-0 mt-2 p-2 rounded shadow-lg'>
+                    {link.sublinks.map((submenu, subIndex) => (
                       <li key={subIndex}>
                         <Link
                           href={submenu.path}
-                          className="block px-4 py-2 hover:bg-gray-200"
-                        >
-                          {submenu.label}
+                          className='block px-4 py-2 hover:bg-gray-200'>
+                          {submenu.name}
                         </Link>
                       </li>
                     ))}
@@ -66,34 +64,32 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
   } else {
     return (
       <>
-        <div className="flex justify-around items-center h-24 w-full px-4 py-12 bg-white text-[#000000] relative">
-          <Link href="/" className="font-bold text-4xl">
+        <div className='flex justify-around items-center h-24 w-full px-4 py-12 bg-white text-[#000000] relative'>
+          <Link href='/' className='font-bold text-4xl'>
             <Image
               src={mainLogo}
-              alt="mainlogo"
+              alt='mainlogo'
               width={350}
               height={350}
-              className="w-full h-full"
+              className='w-full h-full'
             />
           </Link>
-          <ul className="flex max-md:hidden">
-            {navLinks.map((link, index) => (
-              <li key={index} className="relative group">
+          <ul className='flex max-md:hidden'>
+            {links.map((link, index) => (
+              <li key={index} className='relative group'>
                 <Link
                   href={link.path}
-                  className="text-[#000]  px-6 py-4 rounded"
-                >
-                  {link.label}
+                  className='text-[#000]  px-6 py-4 rounded'>
+                  {link.name}
                 </Link>
-                {link.dropdown && (
-                  <ul className="absolute hidden group-hover:block bg-white text-gray-800 left-0 mt-2 p-2 rounded shadow-lg">
-                    {link.dropdown.map((submenu, subIndex) => (
+                {link.sublinks && (
+                  <ul className='absolute hidden group-hover:block bg-white text-gray-800 left-0 mt-2 p-2 rounded shadow-lg'>
+                    {link.sublinks.map((submenu, subIndex) => (
                       <li key={subIndex}>
                         <Link
                           href={submenu.path}
-                          className="block px-4 py-2 hover:bg-gray-200"
-                        >
-                          {submenu.label}
+                          className='block px-4 py-2 hover:bg-gray-200'>
+                          {submenu.name}
                         </Link>
                       </li>
                     ))}
