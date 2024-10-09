@@ -22,7 +22,7 @@ const Hero = () => {
               ANGELSTA provides investors and innovators <br /> with the tools
               to grow.
             </p>
-            <button className='bg-white text-[#001d21f3] w-[200px] rounded-md overflow-hidden font-medium mb-6 py-3 max-lg:mx-auto text-black hover:bg-[#989ec5] hover:scale-110 duration-300'>
+            <button className='bg-white text-[#001d21f3] w-[200px] rounded-md overflow-hidden font-medium mb-6 py-3 max-lg:mx-auto text-black hover:scale-110 duration-300'>
               Get started for Free
             </button>
           </div>

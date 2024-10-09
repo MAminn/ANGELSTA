@@ -6,11 +6,15 @@ interface DropdownItem {
 interface NavLink {
   name: string;
   path: string;
-  submenu: boolean;
+  submenu?: boolean;
   sublinks?: DropdownItem[];
 }
 
 export const links: NavLink[] = [
+  {
+    name: "Home",
+    path: "/"
+  },
   {
     name: "For Investors",
     path: "/capital",

@@ -19,7 +19,7 @@ const ProductsServices = () => {
           </p>
           <Link
             href={"/productsServices"}
-            className='bg-[#000000] text-white w-[200px] text-center rounded-full font-medium my-6 mx-auto md:mx-0 py-3 px-3 transform hover:scale-110 transition ease-out duration-300 '>
+            className='bg-[#0a1622] text-white w-[200px] text-center rounded-full font-medium my-6 mx-auto md:mx-0 py-3 px-3 transform hover:scale-110 transition ease-out duration-300 '>
             Explore More
           </Link>
         </div>

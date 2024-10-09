@@ -3,7 +3,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { links } from "@/constants";
 import Link from "next/link";
 import { useState } from "react";
-import { FaBars, FaChevronDown } from "react-icons/fa6";
+import { FaBars, FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { signOut } from "next-auth/react";
 import { Session } from "next-auth";
 
@@ -23,14 +23,9 @@ const MobileNav: React.FC<NavMenuProps> = (props) => {
             <FaBars size={24} />
           </SheetTrigger>
           <SheetContent className='bg-[#001d21f3] text-white flex justify-center w-full'>
-            <ul className='flex flex-col md:hidden'>
-              {links.slice(0, 4).map((link, index) => (
-                <li key={index} className='relative group'>
-                  {/* <Link
-                    href={link.path}
-                    className='text-white  px-6 py-4 rounded'>
-                    {link.name}
-                  </Link> */}
+            <ul className='flex flex-col mt-8 text-center'>
+              {links.slice(0, 5).map((link, index) => (
+                <li key={index} className='relative group py-6'>
                   <li key={index}>
                     {!link.sublinks ? (
                       <Link href={link.path}>{link.name}</Link>
@@ -40,10 +35,12 @@ const MobileNav: React.FC<NavMenuProps> = (props) => {
                           onClick={() => setSubmenuOpen(!submenuOpen)}
                           className='flex items-center justify-between w-full py-2'>
                           <span>{link.name}</span>
-                          <FaChevronDown />
+                          <span>
+                            {!submenuOpen ? <FaChevronDown /> : <FaChevronUp />}
+                          </span>
                         </button>
                         {submenuOpen && (
-                          <div className='ml-4 space-y-2'>
+                          <div className='space-y-2'>
                             {link.sublinks.map((sub, idx) => (
                               <Link
                                 key={idx}
@@ -59,7 +56,9 @@ const MobileNav: React.FC<NavMenuProps> = (props) => {
                   </li>
                 </li>
               ))}
-              <button onClick={() => signOut()}>Sign Out</button>
+              <button className='py-4' onClick={() => signOut()}>
+                Sign Out
+              </button>
             </ul>
           </SheetContent>
         </Sheet>
@@ -72,14 +71,9 @@ const MobileNav: React.FC<NavMenuProps> = (props) => {
           <FaBars size={24} />
         </SheetTrigger>
         <SheetContent className='bg-[#001d21f3] text-white flex justify-center w-full'>
-          <ul>
-            <li>
-              <Link href='/' className='py-7 px-3 inline-block'>
-                Home
-              </Link>
-            </li>
+          <ul className="mt-8 text-center">
             {links.map((link, idx) => (
-              <li key={idx}>
+              <li key={idx} className="py-6">
                 {!link.sublinks ? (
                   <Link href={link.path}>{link.name}</Link>
                 ) : (

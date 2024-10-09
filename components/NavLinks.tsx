@@ -17,7 +17,7 @@ const NavLinks: React.FC<NavMenuProps> = (props) => {
       <>
         <div className='flex justify-between items-center h-24 max-w-[1240px] w-full px-4 py-12 bg-white text-[#000000] relative'>
           <ul className='flex max-md:hidden'>
-            {links.slice(0, 4).map((link, index) => (
+            {links.slice(0, 5).map((link, index) => (
               <li key={index} className='relative group'>
                 <Link
                   href={link.path}

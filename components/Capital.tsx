@@ -3,9 +3,7 @@ import bgInvestor from "@/public/images/accent-green-bt-ct.svg";
 
 const Capital = () => {
   return (
-    <section
-      id='sectionCapital'
-      className='relative px-8 py-40 overflow-hidden bg-gray-50 capital-section'>
+    <section className='relative px-8 py-40 overflow-hidden bg-gray-50 capital-section'>
       {/* <!-- accents --> */}
       <div className='hidden lg:block absolute -top-40 xl:top-52 right-8 w-96 h-96 xl:w-[30em] xl:h-[30em]'>
         <Image
@@ -30,7 +28,7 @@ const Capital = () => {
         <div className='max-w-2xl mx-auto xl:max-w-3xl capital-content-entry'>
           <div className='text-center'>
             <div className='pb-8 mx-auto w-52 md:w-60 xl:w-64'>
-              <h2 className="text-4xl font-bold">ANGELISTA</h2>
+              <h2 className='text-4xl font-bold'>ANGELISTA</h2>
             </div>
             <div className='space-y-3'>
               <h2 className='text-2xl font-semibold'>

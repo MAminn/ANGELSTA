@@ -36,7 +36,7 @@ const InvestorPage = () => {
       <div className="w-[950px] h-[640px]  flex-col justify-center items-center">
         <div className=" flex justify-center items-center bg-[#f2f4f6] h-[130px]">
           <h1 className=" uppercase text-[1.5625rem] font-semibold p-8 text-center max-lg:text-base">
-            Welcome to your startup investment portfolio on Kingscrowd.
+            Welcome to your startup investment portfolio on Angelsta.
           </h1>
         </div>
         <div className=" h-[510px] bg-white flex justify-center items-center max-lg:flex-wrap  ">
@@ -48,7 +48,7 @@ const InvestorPage = () => {
             <div className="h-[2px] bg-gray-300 mb-6"></div>
             <p className=" max-w-[500px] text-center mb-10 max-lg:text-base max-lg:max-w-[250px] max-lg:pl-6">
               Whether you have invested in 1 or 100 startups online, you can
-              easily add your investments to a free Kingscrowd portfolio to
+              easily add your investments to a free Angelsta portfolio to
               receive portfolio breakdowns and tracking.
             </p>
             <button

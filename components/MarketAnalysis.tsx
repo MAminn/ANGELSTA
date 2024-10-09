@@ -17,7 +17,7 @@ const MarketAnalysis = () => {
             powerful platform.
           </p>
           <Link href='/marketAnalysis'>
-            <button className='font-bold bg-white text-[#000000] rounded-full py-[0.375rem] px-5 hover:bg-[#000] hover:text-white transition ease-out duration-300 mt-4'>
+            <button className='font-bold bg-white text-[#000000] rounded-full py-[0.375rem] px-5 hover:bg-[#0a1622] hover:text-white transition ease-out duration-300 hover:scale-110 mt-4'>
               Start my free trail
             </button>
           </Link>

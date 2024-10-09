@@ -10,8 +10,8 @@ import mainLogo from "@/public/images/logo-trans.png";
 const NavMenu: React.FC = async () => {
   const session = await auth()
   return (
-    <nav className='bg-white pr-8'>
-      <div className='flex justify-between items-center h-24 max-w-[1240px] w-full px-4 py-12 bg-white text-[#000000] relative'>
+    <nav className='bg-white'>
+      <div className='flex justify-between items-center h-24 w-full px-4 py-12 bg-white text-[#000000] relative'>
         <Link href='/' className='font-bold text-4xl'>
           <Image
             src={mainLogo}
@@ -21,7 +21,7 @@ const NavMenu: React.FC = async () => {
             className='w-full h-full'
           />
         </Link>
-        <ul className='md:flex hidden uppercase items-center gap-8'>
+        <ul className='md:flex hidden items-center gap-8'>
           <NavLinks session={session} />
         </ul>
         <MobileNav session={session} />
