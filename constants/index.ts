@@ -10,6 +10,12 @@ interface NavLink {
   sublinks?: DropdownItem[];
 }
 
+interface SidebarLinks {
+  label: string;
+  path: string;
+  imgURL: string;
+}
+
 export const links: NavLink[] = [
   {
     name: "Home",
@@ -51,34 +57,7 @@ export const links: NavLink[] = [
   },
 ];
 
-export const sidebarLinks = [
-  {
-    imgURL: "/icons/home.svg",
-    path: "/",
-    label: "AI financial Valuation",
-  },
-  {
-    imgURL: "/icons/dollar-circle.svg",
-    path: "/market-analysis",
-    label: "Market Analysis & Industrial analysis",
-  },
-  {
-    imgURL: "/icons/transaction.svg",
-    path: "/secondary-marketplace",
-    label: "Secondary Marketplace",
-  },
-  {
-    imgURL: "/icons/money-send.svg",
-    path: "/syndicate-fund",
-    label: "Syndicate fund",
-  },
-  {
-    imgURL: "/icons/money-send.svg",
-    path: "/blockchain",
-    label: "Blockchain",
-  },
-];
-export const sidebarInvestorLinks = [
+export const SidebarLinks = [
   {
     imgURL: "/icons/home.svg",
     path: "/portfolio/investments",

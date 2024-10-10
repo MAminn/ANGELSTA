@@ -377,7 +377,7 @@ body {
   }
 
   .sidebar-link {
-    @apply flex gap-3 items-center py-3 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start;
+    @apply flex gap-3 items-center py-3 px-3 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start;
   }
 
   .sidebar-label {
