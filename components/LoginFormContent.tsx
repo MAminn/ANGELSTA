@@ -33,7 +33,7 @@ const LoginFormContent = (props: LoginFormContentProps) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const email = (e.currentTarget[0] as HTMLInputElement).value;
+    const email = (e.currentTarget[0] as HTMLInputElement).value.toLowerCase();
     const password = (e.currentTarget[1] as HTMLInputElement).value;
 
     if (!isValidEmail(email)) {

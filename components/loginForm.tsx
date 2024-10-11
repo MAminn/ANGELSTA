@@ -43,7 +43,7 @@ export async function SignIn(props: LoginFormProps) {
       console.error("An error occurred while trying to sign in:", err);
       return {
         success: false,
-        error: "An error occurred while trying to sign in",
+        error: "Email Or Password is Incorrect",
         updatedSession: null,
       };
     }
