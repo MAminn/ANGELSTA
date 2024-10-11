@@ -39,7 +39,7 @@ const AnalyticsPage = () => {
             Welcome to your startup investment portfolio on Kingscrowd.
           </h1>
         </div>
-        <div className=" h-[510px] max-md:h-[450px] bg-white flex justify-center items-center  max-md:items-start max-md:p-4  ">
+        <div className=" h-[510px] max-md:h-full bg-white flex justify-center items-center  max-md:items-start max-md:p-6  ">
           <div className=" flex-col justify-center items-center gap-8">
             <p className=" max-w-[500px]  text-center mb-6 text-[1.25rem] max-lg:text-base max-lg:max-w-[250px] max-lg:pl-6 max-md:text-xs  max-md:p-4  max-md:mb-0">
               Now you can track all of your startup investments in one place
