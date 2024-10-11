@@ -34,7 +34,7 @@ const FollowingPage = () => {
   return (
     <div className=" w-full h-full flex justify-center items-center bg-[#E3E8EC]">
       <div className=" w-full h-full  flex-col justify-center items-center m-[80px] max-md:m-[30px]">
-        <div className=" h-[510px] bg-white flex justify-center items-center   w-full  ">
+        <div className=" h-[510px] bg-white flex justify-center items-center max-md:h-full w-full max-md:py-24  ">
           <div className=" flex-col justify-center items-center gap-8">
             <div className="flex flex-col justify-center items-center">
               <h1 className=" text-center mb-6 text-[1.75rem] font-semibold max-lg:text-xl max-md:text-base max-md:p-2">
