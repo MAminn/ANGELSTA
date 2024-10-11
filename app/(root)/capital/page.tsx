@@ -1,4 +1,3 @@
-
 import Capital from "@/components/Capital";
 import CTA from "@/components/CTA";
 import Funding from "@/components/Funding";
@@ -9,7 +8,7 @@ import SectionSummary from "@/components/SectionSummary";
 
 const Investor = () => {
   return (
-    <div className='flex flex-col bg-gray-100 '>
+    <div className="flex flex-col bg-gray-100 z-20">
       <SectionInvestment />
       <SectionSummary />
       <Funding />

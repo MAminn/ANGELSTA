@@ -13,7 +13,7 @@ export default async function LayoutForm({
 
   return (
     <section className={` antialiased `}>
-      <div className=" flex justify-around items-center fixed top-0 left-0 bg-[#1E2D3D] w-full h-[80px] text-[#888888]">
+      <div className=" flex justify-around items-center fixed top-0 left-0 bg-[#1E2D3D] w-full h-[80px] text-[#888888] z-20">
         <div className=" flex justify-around items-center  w-[550px] h-full  max-lg:hidden ">
           <div>Your startup</div>
           <span>{">"}</span>

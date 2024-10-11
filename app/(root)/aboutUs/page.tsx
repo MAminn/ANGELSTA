@@ -10,7 +10,7 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className=" flex flex-col justify-center items-center  gap-16 h-full w-full">
+    <div className=" flex flex-col justify-center items-center  gap-16 h-full w-full z-20">
       <div className="flex justify-between items-center  w-full h-[480px] bg-[#ebf5ff] max-lg:flex-col ">
         <div className=" flex flex-col justify-center items-start gap-6 pl-[400px] max-lg:pl-[20px] max-lg:p-10 max-lg:justify-around max-lg:gap-0 max-lg:items-start">
           <span className=" leading-4 uppercase text-[.875rem] mb-[15px] font-bold max-lg:mb-2">

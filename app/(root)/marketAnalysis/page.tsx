@@ -39,7 +39,7 @@ const MarketAnalysis = () => {
   }, [isOpen]);
 
   return (
-    <section className=" flex-col justify-around items-center gap-10 mt-4 w-full h-full">
+    <section className=" flex-col justify-around items-center gap-10 mt-4 w-full h-full z-20">
       {/* First part of page  */}
       <div className=" flex justify-center items-center  w-full ml-auto mr-auto max-lg:flex-col  ">
         <div className=" max-w-[570px] flex-col max-lg:ml-4 ">

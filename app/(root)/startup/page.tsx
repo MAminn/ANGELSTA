@@ -11,7 +11,7 @@ import { FaPlantWilt } from "react-icons/fa6";
 
 const page = () => {
   return (
-    <div className=" flex flex-col justify-center items-center  h-full w-full mt-[150px]  max-lg:mx-0 max-lg:w-[430px]    ">
+    <div className=" flex flex-col justify-center items-center  h-full w-full mt-[150px]  max-lg:mx-0 max-lg:w-[430px]  z-20  ">
       <div className=" w-full h-[600px] flex justify-center items-center max-lg:w-[430px] max-lg:h-[335px] ">
         <div className="lg:bg-hero h-[600px] w-[1100px] bg-no-repeat bg-center bg-contain flex justify-center items-start max-lg:w-[430px] max-lg:h-[335px] max-lg:flex-col max-lg:justify-center max-lg:items-center max-lg:bg-heroMobile max-lg:bg-top max-lg:bg-[length:380px_70px]  ">
           <div className=" flex-col justify-center items-center mt-[150px] max-lg:mt-0 max-lg:px-[10px]">
