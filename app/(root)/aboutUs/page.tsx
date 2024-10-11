@@ -17,7 +17,7 @@ const Page = () => {
             About us
           </span>
           <h1 className="text-[2.75rem] font-bold leading-[3rem] mb-[25px] max-w-[600px]">
-            Helping the world’s leading companies defy doubt
+            Helping the world’s leading companies defy doubts
           </h1>
           <p className="max-w-[550px] text-[#0e1318] max-lg:mb-6">
             Thousands of organizations use AlphaSense to make smarter decisions
