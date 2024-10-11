@@ -26,7 +26,7 @@ const LoginFormContent = (props: LoginFormContentProps) => {
   }, [props.session, router]);
 
   const isValidEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[A-Za-z][^\s@]*@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
