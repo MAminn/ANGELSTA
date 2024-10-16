@@ -1,5 +1,5 @@
 "use client";
-import { links } from "@/constants";
+import { links } from "@/server/constants"; 
 import Link from "next/link";
 import MobileNav from "./MobileNav";
 import { signOut } from "next-auth/react";

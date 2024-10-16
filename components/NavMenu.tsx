@@ -1,11 +1,9 @@
 import Image from "next/image";
 import MobileNav from "./MobileNav";
 import NavLinks from "./NavLinks";
-import { auth } from "@/auth";
 import Link from "next/link";
 import mainLogo from "@/public/images/logo-trans.png";
-
-// import { useState } from "react";
+import auth from "@/auth";
 
 const NavMenu: React.FC = async () => {
   const session = await auth();
