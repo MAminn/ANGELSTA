@@ -1,7 +1,7 @@
 "use client";
 
-import { SidebarLinks } from "@/constants";
-import { cn } from "@/lib/utils";
+import { SidebarLinks } from "@/server/constants";
+import { cn } from "@/server/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

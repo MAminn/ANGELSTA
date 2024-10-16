@@ -19,7 +19,7 @@ interface SidebarLinks {
 export const links: NavLink[] = [
   {
     name: "Home",
-    path: "/"
+    path: "/",
   },
   {
     name: "For Investors",
@@ -47,12 +47,12 @@ export const links: NavLink[] = [
   },
   {
     name: "Login",
-    path: "/login",
+    path: "/auth/signin",
     submenu: false,
   },
   {
     name: "Sign Up",
-    path: "/register",
+    path: "/auth/signup",
     submenu: false,
   },
 ];
