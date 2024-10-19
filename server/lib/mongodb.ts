@@ -10,11 +10,15 @@ const connectToDB = async () => {
     return;
   }
 
+  if (!process.env.MONGODB_URI) {
+    throw new Error(
+      "Please define the MONGODB_URI environment variable inside .env.local"
+    );
+  }
+
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
       dbName: "next-auth",
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
     });
 
     isConnected = true;
