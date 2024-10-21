@@ -1,32 +1,34 @@
 import mongoose from "mongoose";
 
-let isConnected = false; // track the connection
+const MONGODB_URI = process.env.MONGODB_URI;
 
-const connectToDB = async () => {
-  mongoose.set("strictQuery", true);
+// Declaring a type for mongoose cache
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let cached = (globalThis as any).mongoose;
 
-  if (isConnected) {
-    console.log("MongoDB is already connected");
-    return;
+if (!cached) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  cached = (globalThis as any).mongoose = { conn: null, promise: null };
+}
+
+async function connectToDB() {
+  if (!MONGODB_URI) {
+    throw new Error("Please define the MONGODB_URI environment variable.");
+  }
+  if (cached.conn) {
+    return cached.conn;
   }
 
-  if (!process.env.MONGODB_URI) {
-    throw new Error(
-      "Please define the MONGODB_URI environment variable inside .env.local"
-    );
-  }
+  if (!cached.promise) {
+    const opts = { bufferCommands: false };
 
-  try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: "next-auth",
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+      return mongoose.connection;
     });
-
-    isConnected = true;
-
-    console.log("MongoDB connected");
-  } catch (error) {
-    console.log(error);
   }
-};
+
+  cached.conn = await cached.promise;
+  return cached.conn;
+}
 
 export default connectToDB;

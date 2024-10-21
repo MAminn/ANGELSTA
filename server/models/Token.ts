@@ -1,33 +1,27 @@
-import mongoose, { Document, Schema, Model } from "mongoose";
+import { Schema, model, models } from "mongoose";
+import crypto from "crypto";
 
-// Interface for Token Document
-interface TokenDocument extends Document {
-  userId: mongoose.Schema.Types.ObjectId;
-  token: string;
-  createdAt: Date;
-}
-
-// Define Token Schema
-const TokenSchema: Schema<TokenDocument> = new Schema({
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "User", // Reference to the User model
-  },
-  token: {
-    type: String,
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    required: true,
-    default: Date.now,
-    expires: 3600, // Token will automatically be deleted after 1 hour
-  },
+const TokenSchema = new Schema({
+  email: { type: String, required: true },
+  token: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now, expires: 3600 }, // Token expires in 1 hour
 });
 
-// Create the Token model
-const Token: Model<TokenDocument> =
-  mongoose.models.Token || mongoose.model<TokenDocument>("Token", TokenSchema);
-
+const Token = models.Token || model("Token", TokenSchema);
 export default Token;
+
+export async function createTokenRecord(email: string) {
+  // Generate a secure token
+  const token = crypto.randomBytes(32).toString("hex");
+
+  // Create a new token record
+  const tokenRecord = new Token({
+    email,
+    token,
+  });
+
+  // Save the token record in the database
+  await tokenRecord.save();
+
+  return token;
+}
