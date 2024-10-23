@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
   margin: 0;
   padding: 0;
@@ -408,3 +409,4 @@ body {
     font-weight: 700;
   }
 }
+

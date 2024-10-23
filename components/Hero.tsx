@@ -1,121 +1,91 @@
 import Image from "next/image";
 import startupImage from "@/public/images/startup.jpg";
 import investorImage from "@/public/images/investor.jpg";
-import { FaTableList } from "react-icons/fa6";
+import { IoSunny } from "react-icons/io5";
 import { GrDatabase } from "react-icons/gr";
 import { ImProfile } from "react-icons/im";
-import { IoSunny } from "react-icons/io5";
-import { LuPackageOpen } from "react-icons/lu";
 import { MdEmojiFlags } from "react-icons/md";
+import { FaTableList } from "react-icons/fa6";
+import { LuPackageOpen } from "react-icons/lu";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
-    <section className="bg-[#001d21f3] text-white">
-      <div>
-        <div className="flex flex-col justify-center xl:items-start pt-16 gap-4 lg:px-56  max-lg:px-14 pb-14">
-          <div className="flex flex-col gap-6 max-lg:text-center">
-            <h1 className="text-6xl mb-3">
-              Startup investing <br /> made easy.
-            </h1>
-            <p>
-              ANGELSTA provides investors and innovators <br /> with the tools
-              to grow.
-            </p>
-            <button className="bg-white text-[#001d21f3] w-[200px] rounded-md overflow-hidden font-medium mb-6 py-3 max-lg:mx-auto text-black hover:scale-110 duration-300">
-              Get started for Free
-            </button>
+    <section className='bg-[#001d21f3] text-white py-16'>
+      <div className='container mx-auto px-6 lg:px-12'>
+        <div className='text-center mb-12'>
+          <h1 className='text-5xl font-bold mb-4'>
+            Startup Investing Simplified
+          </h1>
+          <p className='text-lg mb-6'>
+            ANGELSTA connects investors and innovators with the tools to grow.
+          </p>
+          <button className='bg-white font-bold text-[#000] py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-transform'>
+            Get started for Free
+          </button>
+        </div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
+          {/* Startup Services */}
+          <div className='bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300'>
+            <Image
+              src={startupImage}
+              width={600}
+              height={300}
+              alt='Startups'
+              className='rounded-md mb-4'
+            />
+            <h2 className='text-2xl font-bold mb-4'>Startup Services</h2>
+            <ul className='space-y-4'>
+              <li className='flex items-center gap-2'>
+                <IoSunny size={20} /> Data Room
+              </li>
+              <li className='flex items-center gap-2'>
+                <GrDatabase size={20} /> Investors Database
+              </li>
+              <li className='flex items-center gap-2'>
+                <ImProfile size={20} /> Automated Valuation
+              </li>
+              <li className='flex items-center gap-2'>
+                <MdEmojiFlags size={20} /> Demo Days
+              </li>
+              <li className='flex items-center gap-2'>
+                <FaTableList size={20} /> Cap Table
+              </li>
+              <li className='flex items-center gap-2'>
+                <LuPackageOpen size={20} /> Investor Readiness Package
+              </li>
+            </ul>
           </div>
-          <div className="flex gap-8 w-full justify-between max-md:flex-col max-md:justify-center">
-            <div className="w-full">
-              <Image
-                src={startupImage}
-                width={600}
-                height={200}
-                alt="startup"
-                className="rounded-md"
-              />
-              <div>
-                <h4 className="text-2xl mt-1">Startup Services</h4>
-              </div>
-              <div className="flex justify-between mt-4 max-md:flex-col gap-4">
-                <div className="flex flex-wrap gap-4 justify-start flex-col items-start">
-                  <div className="flex gap-2 justify-center items-center">
-                    <IoSunny size={17} />
-                    <h5>Data Room</h5>
-                  </div>
-                  <div className="flex gap-2 justify-center items-center">
-                    <GrDatabase size={17} />
-                    <h5>Investors Database</h5>
-                  </div>
-                  <div className="flex gap-2 justify-center items-center">
-                    <ImProfile size={17} />
-                    <h5>Automated Vauation</h5>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-4 justify-start flex-col items-start">
-                  <div className="flex gap-2 justify-center items-center">
-                    <MdEmojiFlags size={17} />
-                    <h5>Demo Days</h5>
-                  </div>
-                  <div className="flex gap-2 justify-center items-center">
-                    <FaTableList size={17} />
-                    <h5>Cap Table</h5>
-                  </div>
-                  <div className="flex gap-2 justify-center items-center">
-                    <LuPackageOpen size={17} />
-                    <h5>Investor Readlness Package</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full">
-              <Image
-                src={investorImage}
-                width={600}
-                height={200}
-                alt="investor"
-                className="rounded-md"
-              />
-              <div>
-                <h4 className="text-2xl mt-1">Investors Services</h4>
-              </div>
-              <div className="flex max-md:flex-col justify-between mt-4 gap-4">
-                <div className="flex flex-wrap gap-4 justify-start flex-col items-start">
-                  <div className="flex gap-2 justify-center items-center">
-                    <IoSunny size={17} />
-                    <h5>Personal Profiles</h5>
-                  </div>
-                  <div className="flex gap-2 justify-center items-center">
-                    <GrDatabase size={17} />
-                    <h5>Portofolio Management</h5>
-                  </div>
-                  <div className="flex gap-2 justify-center items-center">
-                    <ImProfile size={17} />
-                    <h5>Startup Sourcing & Recommendation</h5>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-4 justify-start flex-col items-start">
-                  <div className="flex gap-2 justify-center items-center">
-                    <MdEmojiFlags size={17} />
-                    <h5>Startup Database</h5>
-                  </div>
-                  <div className="flex gap-2 justify-center items-center">
-                    <FaTableList size={17} />
-                    <h5>Incabator/Accicrator Management</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          {/* Investor Services */}
+          <div className='bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300'>
+            <Image
+              src={investorImage}
+              width={600}
+              height={300}
+              alt='Investors'
+              className='rounded-md mb-4'
+            />
+            <h2 className='text-2xl font-bold mb-4'>Investor Services</h2>
+            <ul className='space-y-4'>
+              <li className='flex items-center gap-2'>
+                <IoSunny size={20} /> Personal Profiles
+              </li>
+              <li className='flex items-center gap-2'>
+                <GrDatabase size={20} /> Portfolio Management
+              </li>
+              <li className='flex items-center gap-2'>
+                <ImProfile size={20} /> Startup Sourcing & Recommendation
+              </li>
+              <li className='flex items-center gap-2'>
+                <MdEmojiFlags size={20} /> Startup Database
+              </li>
+              <li className='flex items-center gap-2'>
+                <FaTableList size={20} /> Incubator/Accelerator Management
+              </li>
+            </ul>
           </div>
         </div>
-        {/* <div className='home-header'>
-          <HeaderBox
-            type='greeting'
-            title='Welcome'
-            user={loggedIn?.firstName}
-            subtext='Access and manage your account and transactions effciently.'
-          />
-        </div> */}
       </div>
     </section>
   );
