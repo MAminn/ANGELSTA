@@ -103,6 +103,12 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      screens: {
+        xs: "321px",
+      },
+      height: {
+        "navbar-height": "calc(100vh - 96px)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

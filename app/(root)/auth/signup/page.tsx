@@ -11,7 +11,7 @@ export default function SignupPage() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen-navbar bg-gradient-to-br from-[#0b1723] via-[#4d7275] to-[#d1d7d7] overflow-hidden relative">
+    <div className="flex flex-col items-center justify-center md:h-navbar-height max-md:min-h-screen max-xs:py-16  bg-gradient-to-br from-[#0b1723] via-[#4d7275] to-[#d1d7d7] overflow-hidden relative">
       <div
         className={`flex flex-col md:flex-row gap-6 md:gap-8 max-w-4xl w-full z-10 transition-transform duration-700 ${
           showCards ? "scale-100" : "scale-0"

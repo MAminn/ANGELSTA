@@ -46,9 +46,9 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #7878a3;
 }
-.h-screen-navbar {
+/* .h-screen-navbar {
   height: calc(100vh - 96px);
-}
+} */
 
 @layer utilities {
   .input-class {
