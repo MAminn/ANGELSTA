@@ -84,7 +84,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen-navbar bg-gradient-to-br from-[#0b1723] via-[#4d7275] to-[#d1d7d7] p-4">
+    <div className="flex items-center justify-center h-navbar-height bg-gradient-to-br from-[#0b1723] via-[#4d7275] to-[#d1d7d7] p-4">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md mx-auto bg-white rounded-lg shadow-lg p-8 mt-10 relative z-10"
