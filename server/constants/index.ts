@@ -194,3 +194,41 @@ export const transactionCategoryStyles = {
     chipBackgroundColor: "bg-inherit",
   },
 };
+
+export const servicesData = [
+  {
+    id: 1,
+    title: "AI-Powered Startup Valuation",
+    description: "Get precise and data-driven valuations for startups using AI technology.",
+    details: "Our AI-driven valuation tool analyzes multiple data points and provides an objective valuation, empowering investors with deep insights into startup worth and potential.",
+    link: "/services/ai-powered-startup-valuation"
+  },
+  {
+    id: 2,
+    title: "Blockchain Marketplace",
+    description: "A secure platform to connect investors and startups via blockchain.",
+    details: "Utilize blockchain technology for secure, transparent, and efficient transactions. Our marketplace is designed to foster trust and streamline the process of funding innovative startups.",
+    link: "/services/blockchain-marketplace"
+  },
+  {
+    id: 3,
+    title: "Market & Industry Analysis",
+    description: "Comprehensive analysis to guide investment decisions with confidence.",
+    details: "Gain access to detailed market trends, industry growth data, and competitive insights tailored to help investors and startups make informed, strategic decisions.",
+    link: "/services/market-industry-analysis"
+  },
+  {
+    id: 4,
+    title: "Investor Portfolio Management",
+    description: "Optimize your portfolio with insights and performance tracking.",
+    details: "A complete solution for tracking investment portfolios, providing real-time analytics, risk assessment, and tailored recommendations to maximize returns and reduce risks.",
+    link: "/services/investor-portfolio-management"
+  },
+  {
+    id: 5,
+    title: "Syndicate Funds",
+    description: "Join forces with other investors in structured syndicate funds.",
+    details: "Our syndicate funds service allows investors to pool resources and collectively invest in high-potential startups, sharing risks and rewards for better investment outcomes.",
+    link: "/services/syndicate-funds"
+  }
+];

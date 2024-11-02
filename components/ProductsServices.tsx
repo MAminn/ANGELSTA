@@ -1,31 +1,80 @@
-import Laptop from '@/public/images/laptop.jpg'
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import { useState } from "react";
 
-const ProductsServices = () => {
+import { servicesData } from "@/server/constants";
+import Link from "next/link";
+
+const ProductsAndServices: React.FC = () => {
+  const [activeService, setActiveService] = useState<number | null>(null);
+
   return (
-    <div className='bg-white w-full py-16 px-4'>
-      <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
-        <Image className='w-[500px] mx-auto my-4' src={Laptop} alt='laptop' />
-        <div className='flex flex-col justify-center max-md:items-center'>
-          <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2 mb-4'>
-            Our Services & Products
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Exercitationem quasi amet eligendi nisi, sunt debitis, odio id, ea
-            similique iure numquam voluptates suscipit sed. Sint voluptas
-            recusandae adipisci quo nihil?
-          </p>
-          <Link
-            href={"/productsServices"}
-            className='bg-[#0a1622] text-white w-[200px] text-center rounded-full font-medium my-6 mx-auto md:mx-0 py-3 px-3 transform hover:scale-110 transition ease-out duration-300 '>
-            Explore More
-          </Link>
+    <section className='bg-gradient-to-br from-[#0a1622] to-[#0a272b] py-16 text-[#d1d7d7]'>
+      <div className='container mx-auto px-6 lg:px-12'>
+        <h2 className='text-4xl font-bold text-center text-[#87bab3] mb-12'>
+          Our Products & Services
+        </h2>
+
+        <div className='flex flex-col md:flex-row md:space-x-12'>
+          {/* Service List */}
+          <div className='flex-1 space-y-6'>
+            {servicesData.map((service) => (
+              <div
+                key={service.id}
+                onClick={() =>
+                  setActiveService(
+                    service.id === activeService ? null : service.id
+                  )
+                }
+                className={`cursor-pointer p-6 rounded-lg shadow-lg transition-all duration-300 ${
+                  activeService === service.id
+                    ? "bg-[#4d7374]/70"
+                    : "bg-[#0a272b]/70"
+                } hover:bg-[#4d7374]/80`}>
+                <h3 className='text-2xl font-semibold text-[#87bab3]'>
+                  {service.title}
+                </h3>
+                <p className='text-[#d1d7d7] mt-2'>{service.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Service Details */}
+          <div className='flex-1 mt-8 md:mt-0 bg-[#0a272b]/50 p-8 rounded-lg shadow-lg'>
+            {activeService !== null ? (
+              <div>
+                <h3 className='text-3xl font-semibold text-[#4d7374] mb-4'>
+                  {
+                    servicesData.find((service) => service.id === activeService)
+                      ?.title
+                  }
+                </h3>
+                <p className='text-lg text-[#d1d7d7] leading-relaxed mb-6'>
+                  {
+                    servicesData.find((service) => service.id === activeService)
+                      ?.details
+                  }
+                </p>
+                <button className='bg-gradient-to-r from-[#87bab3] to-[#4d7374] text-[#0a1622] font-semibold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform'>
+                  <Link
+                    href={
+                      servicesData.find(
+                        (service) => service.id === activeService
+                      )?.link || "#"
+                    }>
+                    Learn More
+                  </Link>
+                </button>
+              </div>
+            ) : (
+              <p className='text-lg text-[#d1d7d7] italic'>
+                Select a product or service to view details.
+              </p>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
-export default ProductsServices
+export default ProductsAndServices;
