@@ -27,6 +27,37 @@ const Hero: React.FC = () => {
 
         {/* Services Section */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
+          {/* Investor Services */}
+          <div className='bg-[#0a272b]/70 backdrop-blur-md p-8 rounded-lg shadow-xl hover:bg-[#0a272b]/80 transition-colors duration-300 hover:shadow-2xl transform hover:-translate-y-2'>
+            <Image
+              src={investorImage}
+              width={600}
+              height={300}
+              alt='Investors'
+              className='rounded-lg mb-6 object-cover h-[324px]'
+            />
+            <h2 className='text-3xl font-semibold mb-4 text-[#87bab3]'>
+              Investor Services
+            </h2>
+            <ul className='space-y-5 text-lg'>
+              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
+                <IoSunny size={24} /> Personal Profiles
+              </li>
+              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
+                <GrDatabase size={24} /> Portfolio Management
+              </li>
+              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
+                <ImProfile size={24} /> Startup Sourcing & Recommendation
+              </li>
+              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
+                <MdEmojiFlags size={24} /> Startup Database
+              </li>
+              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
+                <FaTableList size={24} /> Incubator/Accelerator Management
+              </li>
+            </ul>
+          </div>
+
           {/* Startup Services */}
           <div className='bg-[#0a272b]/70 backdrop-blur-md p-8 rounded-lg shadow-xl hover:bg-[#0a272b]/80 transition-colors duration-300 hover:shadow-2xl transform hover:-translate-y-2'>
             <Image
@@ -34,7 +65,7 @@ const Hero: React.FC = () => {
               width={600}
               height={300}
               alt='Startups'
-              className='rounded-lg mb-6 object-cover'
+              className='rounded-lg mb-6 object-cover h-[324px]'
             />
             <h2 className='text-3xl font-semibold mb-4 text-[#87bab3]'>
               Startup Services
@@ -57,37 +88,6 @@ const Hero: React.FC = () => {
               </li>
               <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#87bab3] transition-colors'>
                 <LuPackageOpen size={24} /> Investor Readiness Package
-              </li>
-            </ul>
-          </div>
-
-          {/* Investor Services */}
-          <div className='bg-[#0a272b]/70 backdrop-blur-md p-8 rounded-lg shadow-xl hover:bg-[#0a272b]/80 transition-colors duration-300 hover:shadow-2xl transform hover:-translate-y-2'>
-            <Image
-              src={investorImage}
-              width={600}
-              height={300}
-              alt='Investors'
-              className='rounded-lg mb-6 object-cover'
-            />
-            <h2 className='text-3xl font-semibold mb-4 text-[#87bab3]'>
-              Investor Services
-            </h2>
-            <ul className='space-y-5 text-lg'>
-              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <IoSunny size={24} /> Personal Profiles
-              </li>
-              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <GrDatabase size={24} /> Portfolio Management
-              </li>
-              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <ImProfile size={24} /> Startup Sourcing & Recommendation
-              </li>
-              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <MdEmojiFlags size={24} /> Startup Database
-              </li>
-              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <FaTableList size={24} /> Incubator/Accelerator Management
               </li>
             </ul>
           </div>
