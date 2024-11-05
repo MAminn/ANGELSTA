@@ -74,7 +74,7 @@
 // export default SignupForm;
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface SignupProps {
   role: "investor" | "startup";
@@ -86,6 +86,12 @@ const SignupForm: React.FC<SignupProps> = (props) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false); // New loading state
   const router = useRouter();
+
+  const [showCard, setShowCard] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setShowCard(true), 100);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -121,7 +127,9 @@ const SignupForm: React.FC<SignupProps> = (props) => {
     <div className="flex items-center justify-center h-navbar-height w-full bg-gradient-to-br from-[#0b1723] via-[#4d7275] to-[#d1d7d7] p-4">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md mx-auto bg-white rounded-lg shadow-lg p-8 mt-10 relative z-10"
+        className={`w-full max-w-md mx-auto bg-white rounded-lg shadow-lg p-8 mt-10 relative z-10 transition-transform duration-700 ${
+          showCard ? "scale-100" : "scale-0"
+        }`}
       >
         <h1 className="text-2xl font-bold text-center mb-6">
           Sign Up as {props.role === "startup" ? "Startup" : "Investor"}
