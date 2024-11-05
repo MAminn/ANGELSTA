@@ -8,165 +8,99 @@ import iconReturn from "@/public/images/icon-returns.svg";
 
 const Funding = () => {
   return (
-    <section
-      id="sectionFunding"
-      className="relative overflow-hidden bg-gray-100 snap-start snap-mandatory scroll-mt-44 funding-section"
-    >
-      {/* <!-- accent --> */}
-      <div className="absolute -top-56 -right-72 hidden w-[48rem] xl:w-[64rem] lg:block">
+    <section className='relative overflow-hidden bg-[#d1d7d7] py-16 px-8'>
+      {/* Background accent */}
+      <div className='absolute top-0 right-0 hidden lg:block'>
         <Image
           src={bgInvestor}
-          width={800}
-          height={500}
-          alt="capital"
-          className="w-full"
+          width={400}
+          height={400}
+          alt='Background Accent'
+          className='opacity-30'
         />
       </div>
-      {/* <!-- funding hero banner--> */}
-      <div
-        id="fundingHero"
-        className="relative w-full mx-auto lg:max-w-6xl xl:max-w-7xl funding-hero"
-      >
-        <div className="absolute top-0 hidden w-3/4 h-full -ml-48 bg-[#0b272d] lg:block lg:-left-72 xl:-left-96">
-          &nbsp;
+
+      {/* Header */}
+      <div className='max-w-7xl mx-auto text-center lg:flex lg:justify-between lg:items-center bg-[#0a272b] py-12 px-6 rounded-lg mb-16'>
+        <h2 className='text-3xl font-semibold text-white lg:text-4xl lg:leading-snug'>
+          Angelista’s portfolio outperforms market averages by 25%
+        </h2>
+      </div>
+
+      {/* Graph and statistics */}
+      <div className='flex flex-col lg:flex-row max-w-6xl mx-auto space-y-8 lg:space-y-0 lg:space-x-12'>
+        {/* Graph */}
+        <div className='lg:w-8/12'>
+          <Image
+            src={graph}
+            width={600}
+            height={400}
+            alt='Funding Graph'
+            className='rounded-md shadow-lg'
+          />
         </div>
-        {/*  */}
-        {/* <!-- hero entry --> */}
-        <div
-          id="fundingHeroEntry"
-          className="relative grid grid-cols-1 gap-0 md:grid-cols-12 funding-hero__entry"
-        >
-          <div className="relative col-span-12 px-8 py-20 mx-auto bg-[#0b272d] lg:col-span-10 xl:col-span-12 lg:pr-16 lg:rounded-r-lg 2xl:pl-0 xl:mx-0">
-            <h2 className="text-2xl font-bold text-white md:text-4xl lg:text-5xl xl:text-6xl">
-              Angelista’s portfolio of highly rated companies has 25% higher
-              unrealized returns than market average
-            </h2>
+
+        {/* Stats summary */}
+        <div className='lg:w-4/12 space-y-4'>
+          <div className='p-6 bg-white rounded-lg shadow-md flex items-center space-x-4'>
+            <Image src={iconIpo} width={40} height={40} alt='IPO Icon' />
+            <p className='text-gray-700 font-medium'>1 IPO</p>
+          </div>
+          <div className='p-6 bg-white rounded-lg shadow-md flex items-center space-x-4'>
+            <Image
+              src={aquisition}
+              width={40}
+              height={40}
+              alt='Acquisition Icon'
+            />
+            <p className='text-gray-700 font-medium'>4 Acquisitions</p>
+          </div>
+          <div className='p-6 bg-white rounded-lg shadow-md flex items-center space-x-4'>
+            <Image
+              src={iconRepurchase}
+              width={40}
+              height={40}
+              alt='Repurchase Icon'
+            />
+            <p className='text-gray-700 font-medium'>2 Company Repurchases</p>
+          </div>
+          <div className='p-6 bg-white rounded-lg shadow-md flex items-center space-x-4'>
+            <Image src={iconReturn} width={40} height={40} alt='Returns Icon' />
+            <p className='text-gray-700 font-medium'>
+              2.5x Avg. Unrealized Returns
+            </p>
           </div>
         </div>
       </div>
-      <div
-        id="fundingGraph"
-        className="relative px-8 py-20 mx-auto space-y-6 max-w-7xl funding-graph"
-      >
-        <div className="grid grid-cols-1 xl:grid-cols-12">
-          {/* <!-- graph --> */}
-          <div
-            id="fundingGraphBarGraph"
-            className="col-span-1 lg:col-span-10 funding-graph__bar-graph"
-          >
-            <Image
-              src={graph}
-              width={200}
-              height={200}
-              alt="graph"
-              className="w-full"
-            />
-          </div>
 
-          {/* <!-- graph sumary --> */}
-          <div
-            id="fundingGraphItems"
-            className="col-span-1 space-y-4 lg:col-span-2 funding-graph-items"
-          >
-            <div className="grid gap-4 pt-8 xl:pt-0 md:grid-cols-2 xl:grid-cols-1 xl:gap-x-0 xl:gap-y-2">
-              {/* 
-                <!-- IPO --> */}
-              <div className="p-4 space-y-3 border border-gray-200 rounded-sm bg-gray-50 funding-graph-item">
-                <div className="w-8 h-8 icon">
-                  <Image
-                    src={iconIpo}
-                    width={200}
-                    height={200}
-                    alt="Ipo"
-                    className="w-full"
-                  />
-                </div>
-                <p>1 IPO</p>
-              </div>
-              {/* 
-                <!-- Acquisitions --> */}
-              <div className="p-4 space-y-3 border border-gray-200 rounded-sm bg-gray-50 funding-graph-item">
-                <div className="w-8 h-8 icon">
-                  <Image
-                    src={aquisition}
-                    width={200}
-                    height={200}
-                    alt="aquisition"
-                    className="w-full"
-                  />
-                </div>
-                <p>4 Acquisitions</p>
-              </div>
-
-              {/* <!--Repurchases --> */}
-              <div className="p-4 space-y-3 border border-gray-200 rounded-sm bg-gray-50 funding-graph-item">
-                <div className="w-8 h-8 icon">
-                  <Image
-                    src={iconRepurchase}
-                    width={200}
-                    height={200}
-                    alt="iconRepurchase"
-                    className="w-full"
-                  />
-                </div>
-                <p>2 Company Repurchases</p>
-              </div>
-
-              {/* <!--Returns --> */}
-              <div className="p-4 space-y-3 border border-gray-200 rounded-sm bg-gray-50 funding-graph-item">
-                <div className="w-8 h-8 icon">
-                  <Image
-                    src={iconReturn}
-                    width={200}
-                    height={200}
-                    alt="aquisition"
-                    className="w-full"
-                  />
-                </div>
-                <p>2.5x Avg. Unrealized Returns</p>
-              </div>
-            </div>
-          </div>
+      {/* Call to Action */}
+      <div className='flex flex-col lg:flex-row items-center justify-between mt-16 px-4 py-6 bg-[#0a1622] rounded-lg'>
+        <div className='text-center lg:text-left lg:w-3/4'>
+          <h5 className='text-xl font-semibold text-[#87bab3]'>
+            Invest in the First Quant VC Fund
+          </h5>
+          <p className='text-sm text-white mt-2'>
+            Our algorithms identify promising investment opportunities, and our
+            team verifies selections for fund decisions.
+          </p>
         </div>
-
-        <div
-          id="fundingSummary"
-          className="grid grid-cols-1 gap-8 p-8 rounded-md lg:grid-cols-12 bg-slate-200 funding-summary"
-        >
-          <div className="col-span-1 space-y-4 lg:col-span-8">
-            <h5 className="text-xl font-semibold">
-              Invest in the first quant VC fund in the online private markets
-            </h5>
-            <p>
-              Our algorithm will source and vet new investment opportunities.
-              Then our team will verify selections and make final investment
-              decisions for the fund.
-            </p>
-          </div>
-          <div className="col-span-1 lg:col-span-4">
-            <div className="flex items-center justify-center gap-1 mx-auto md:justify-start lg:mx-0 md:gap-2">
-              <a
-                href="https://calendly.com/chris-kc"
-                target="_blank"
-                className="inline-flex items-center px-1.5 py-2 text-xs font-bold text-white border border-transparent rounded-md shadow md:px-4 md:text-sm lg:text-base bg-[#4c7375] hover:bg-[#87bab0] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 hover:shadow-lg"
-                rel="noreferrer"
-                title="Schedule a Call"
-              >
-                Schedule<span className="hidden mx-1 md:block"> a </span> Call
-              </a>
-              <a
-                href="https://angellist.com/i/oQG7E-u"
-                target="_blank"
-                className="inline-flex items-center px-1.5 py-2 text-xs font-bold text-white  border border-transparent rounded-md shadow md:px-4 md:text-sm lg:text-base bg-[#0b272d] hover:bg-[#87bab0] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 hover:shadow-lg"
-                rel="noreferrer"
-                title="Invest Now"
-              >
-                Invest Now
-              </a>
-            </div>{" "}
-          </div>
+        <div className='mt-6 lg:mt-0 flex space-x-4'>
+          <a
+            href='https://calendly.com/chris-kc'
+            target='_blank'
+            rel='noreferrer'
+            className='bg-[#4d7374] hover:bg-[#87bab0] text-white font-semibold py-2 px-4 rounded shadow-lg'>
+            Schedule a Call
+          </a>
+          <a
+            href='https://angellist.com/i/oQG7E-u'
+            target='_blank'
+            rel='noreferrer'
+            className='bg-[#0a272b] hover:bg-[#87bab0] text-white font-semibold py-2 px-4 rounded shadow-lg'>
+            Invest Now
+          </a>
         </div>
-      </div>{" "}
+      </div>
     </section>
   );
 };

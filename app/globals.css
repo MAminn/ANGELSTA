@@ -411,3 +411,33 @@ body {
     font-weight: 700;
   }
 }
+
+/* In your global CSS or Tailwind configuration */
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background-color: #87bab3;
+  color: #0a1622;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4d7374;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background-color: #0a272b;
+  color: #d1d7d7;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #87bab3;
+  color: #0a1622;
+}
+
