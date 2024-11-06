@@ -39,7 +39,7 @@ const Solutions = () => {
             for the MENA region&apos;s unique market dynamics.
           </p>
           <Link
-            href='/aiValuation'
+            href='/solutions/ai-valuation'
             className='inline-block font-semibold bg-white text-[#001d21] rounded-full py-2 px-6 hover:bg-[#4d7374] hover:text-white transition ease-in-out duration-300'>
             Learn More
           </Link>
@@ -63,7 +63,7 @@ const Solutions = () => {
             provide transparency and protect your investments.
           </p>
           <Link
-            href='/blockchainMarketplace'
+            href='/solutions/blockchain-marketplace'
             className='inline-block font-semibold bg-white text-[#001d21] rounded-full py-2 px-6 hover:bg-[#4d7374] hover:text-white transition ease-in-out duration-300'>
             Learn More
           </Link>

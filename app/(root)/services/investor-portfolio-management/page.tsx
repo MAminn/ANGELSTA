@@ -1,215 +1,137 @@
+'use client'
+import { motion } from "framer-motion";
 import React from "react";
-import Link from "next/link";
 
-const InvestorPortfolioManagement: React.FC = () => {
+const InvestorPortfolioManagement = () => {
   return (
-    <div className='bg-[#0a1622] text-[#d1d7d7] min-h-screen py-12'>
-      <div className='container mx-auto px-6 lg:px-12 space-y-16 pt-6 max-md:text-center'>
-        {/* Headline and Subheadline */}
-        <header className='text-center'>
-          <h1 className='text-4xl lg:text-5xl font-bold text-[#87bab3] mb-4'>
+    <section className='px-8 py-24 bg-[#0a1622]'>
+      <div className='max-w-7xl mx-auto space-y-20 text-center lg:text-left'>
+        {/* Headline Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className='space-y-4'>
+          <h1 className='text-4xl font-extrabold text-[#87bab3]'>
             Manage and Grow Your Startup Portfolio with AI-Powered Insights
           </h1>
-          <p className='text-xl lg:text-2xl text-[#d1d7d7] max-w-3xl mx-auto'>
+          <h2 className='text-xl font-medium text-[#d1d7d7]'>
             Optimize your portfolio strategy, assess new investment
             opportunities, and track startup performance with Angelsta’s
             comprehensive portfolio management solutions.
-          </p>
-        </header>
-
-        {/* Section 1 */}
-        <section className='bg-[#0a272b] p-8 rounded-lg shadow-lg'>
-          <h2 className='text-3xl font-semibold text-[#4d7374] mb-4'>
-            AI-Powered Portfolio Valuation & Management
           </h2>
-          <p className='text-lg mb-6'>
-            Angelsta provides investors with an AI-powered SaaS portfolio
-            management solution that helps you periodically valuate your entire
-            portfolio. With our tools, you can easily assess the current value
-            of your startup investments and make informed decisions based on
-            real-time data and market trends.
-          </p>
-          <ul className='space-y-2 list-disc list-inside'>
-            <li>
-              Periodic Valuation: Receive automated, AI-driven assessments of
-              your portfolio’s value on a regular basis.
-            </li>
-            <li>
-              Real-Time Adjustments: Our valuation tools help you stay ahead of
-              market changes, enabling data-driven decisions.
-            </li>
-            <li>
-              Strategic Insights: Use AI-generated reports to align your
-              portfolio with investment goals.
-            </li>
-          </ul>
-          <Link
-            href='/services/portfolio-valuation'
-            className='mt-6 inline-block bg-gradient-to-r from-[#87bab3] to-[#4d7374] text-[#0a1622] font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-105 transition-transform'>
-            Start Managing Your Portfolio
-          </Link>
-        </section>
+        </motion.div>
 
-        {/* Section 2 */}
-        <section className='bg-[#0a272b] p-8 rounded-lg shadow-lg'>
-          <h2 className='text-3xl font-semibold text-[#4d7374] mb-4'>
-            New Startup Valuation & Portfolio Alignment
-          </h2>
-          <p className='text-lg mb-6'>
-            Before making a new investment, Angelsta’s AI valuation tools help
-            you understand how adding a new startup to your portfolio will
-            impact your overall strategy.
-          </p>
-          <ul className='space-y-2 list-disc list-inside'>
-            <li>
-              New Startup Valuation: Instantly evaluate the value and potential
-              of new startups.
-            </li>
-            <li>
-              Portfolio Impact Analysis: Align new investments with your
-              long-term portfolio strategy.
-            </li>
-            <li>
-              Risk Mitigation: Identify potential risks and benefits before
-              making new investments.
-            </li>
-          </ul>
-          <Link
-            href='/services/startup-valuation'
-            className='mt-6 inline-block bg-gradient-to-r from-[#87bab3] to-[#4d7374] text-[#0a1622] font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-105 transition-transform'>
-            Evaluate New Investment Opportunities
-          </Link>
-        </section>
+        {/* Sections */}
+        <div className='space-y-16'>
+          {/* Section 1 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className='bg-[#0a272b] p-8 rounded-xl shadow-lg space-y-4'>
+            <h3 className='text-3xl font-bold text-[#87bab3]'>
+              AI-Powered Portfolio Valuation & Management
+            </h3>
+            <p className='text-lg text-[#d1d7d7]'>
+              Regular Valuation of Your Startup Portfolio
+            </p>
+            <p className='text-[#d1d7d7]'>
+              Angelsta provides investors with an AI-powered SaaS portfolio
+              management solution that helps you periodically valuate your
+              entire portfolio...
+            </p>
+            <ul className='list-disc list-inside text-[#d1d7d7] space-y-2'>
+              <li>
+                <strong>Periodic Valuation:</strong> Receive automated,
+                AI-driven assessments...
+              </li>
+              <li>
+                <strong>Real-Time Adjustments:</strong> Our valuation tools
+                allow you to stay ahead...
+              </li>
+              <li>
+                <strong>Strategic Insights:</strong> Use AI-generated reports to
+                align...
+              </li>
+            </ul>
+            <button className='px-8 py-3 mt-4 text-lg font-semibold text-[#0a1622] bg-[#87bab3] rounded-full hover:bg-[#4d7374] transition-colors'>
+              Start Managing Your Portfolio
+            </button>
+          </motion.div>
 
-        {/* Section 3 */}
-        <section className='bg-[#0a272b] p-8 rounded-lg shadow-lg'>
-          <h2 className='text-3xl font-semibold text-[#4d7374] mb-4'>
-            Due Diligence Services for New Investments
-          </h2>
-          <p className='text-lg mb-6'>
-            Angelsta offers due diligence services that provide investors with
-            in-depth analysis and insights into potential investments.
-          </p>
-          <ul className='space-y-2 list-disc list-inside'>
-            <li>
-              Financial Health Analysis: Review the startup’s financial
-              standing.
-            </li>
-            <li>
-              Market Validation: Check the startup&apos;s position within its
-              industry.
-            </li>
-            <li>
-              Operational Review: Assess the startup’s team, business model, and
-              operations.
-            </li>
-          </ul>
-          <Link
-            href='/services/due-diligence'
-            className='mt-6 inline-block bg-gradient-to-r from-[#87bab3] to-[#4d7374] text-[#0a1622] font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-105 transition-transform'>
-            Request Due Diligence Services
-          </Link>
-        </section>
+          {/* Repeat similar structure for each section but vary the animation and layout slightly */}
+          {/* Section 2 */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className='p-8 bg-[#4d7374] text-white rounded-xl shadow-lg space-y-4'>
+            <h3 className='text-3xl font-bold'>
+              New Startup Valuation & Portfolio Alignment
+            </h3>
+            <p className='text-lg'>
+              Evaluate New Startups and Align Them with Your Portfolio Strategy
+            </p>
+            <p>
+              Before making a new investment, Angelsta’s AI valuation tools help
+              you understand...
+            </p>
+            <ul className='list-disc list-inside space-y-2'>
+              <li>
+                <strong>New Startup Valuation:</strong> Instantly evaluate...
+              </li>
+              <li>
+                <strong>Portfolio Impact Analysis:</strong> Our tools compare...
+              </li>
+              <li>
+                <strong>Risk Mitigation:</strong> Understand potential risks...
+              </li>
+            </ul>
+            <button className='px-8 py-3 mt-4 text-lg font-semibold text-[#0a1622] bg-[#d1d7d7] rounded-full hover:bg-[#87bab3] transition-colors'>
+              Evaluate New Investment Opportunities
+            </button>
+          </motion.div>
 
-        {/* Section 4 */}
-        <section className='bg-[#0a272b] p-8 rounded-lg shadow-lg'>
-          <h2 className='text-3xl font-semibold text-[#4d7374] mb-4'>
-            Dashboard of Startup KPIs & Performance Tracking
-          </h2>
-          <p className='text-lg mb-6'>
-            Keep track of your startup investments with Angelsta’s KPI
-            dashboard, which allows you to monitor key performance indicators
-            (KPIs) for each company in your portfolio.
-          </p>
-          <ul className='space-y-2 list-disc list-inside'>
-            <li>
-              KPI Tracking: Monitor revenue growth, user acquisition, and more.
-            </li>
-            <li>
-              Automatic Updates: Get regular updates on startup performance.
-            </li>
-            <li>
-              Portfolio Overview: Easily view trends and identify
-              high-performing startups.
-            </li>
-          </ul>
-          <Link
-            href='/services/kpi-dashboard'
-            className='mt-6 inline-block bg-gradient-to-r from-[#87bab3] to-[#4d7374] text-[#0a1622] font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-105 transition-transform'>
-            Monitor Your Investments
-          </Link>
-        </section>
+          {/* Additional Sections: Use varied animations and layouts for each */}
+          {/* Section 3 */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className='bg-[#0a272b] p-8 rounded-xl shadow-lg space-y-4'>
+            <h3 className='text-3xl font-bold text-[#87bab3]'>
+              Due Diligence Services for New Investments
+            </h3>
+            <p className='text-lg text-[#d1d7d7]'>
+              Comprehensive Due Diligence for Smarter Investments
+            </p>
+            <p className='text-[#d1d7d7]'>
+              Angelsta offers due diligence services that provide investors with
+              in-depth analysis...
+            </p>
+            <button className='px-8 py-3 mt-4 text-lg font-semibold text-[#0a1622] bg-[#87bab3] rounded-full hover:bg-[#4d7374] transition-colors'>
+              Request Due Diligence Services
+            </button>
+          </motion.div>
 
-        {/* Section 5 */}
-        <section className='bg-[#0a272b] p-8 rounded-lg shadow-lg'>
-          <h2 className='text-3xl font-semibold text-[#4d7374] mb-4'>
-            Alerts & Reports
-          </h2>
-          <p className='text-lg mb-6'>
-            Angelsta’s platform keeps you informed with real-time alerts and
-            periodic reports on the status of your startup investments.
-          </p>
-          <ul className='space-y-2 list-disc list-inside'>
-            <li>
-              Performance Alerts: Stay updated with instant notifications.
-            </li>
-            <li>
-              Customized Reports: Receive AI-generated summaries and portfolio
-              checks.
-            </li>
-            <li>
-              Stay Proactive: Use insights to make timely adjustments to your
-              strategy.
-            </li>
-          </ul>
-          <Link
-            href='/services/alerts-reports'
-            className='mt-6 inline-block bg-gradient-to-r from-[#87bab3] to-[#4d7374] text-[#0a1622] font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-105 transition-transform'>
-            Sign Up for Alerts
-          </Link>
-        </section>
-
-        {/* Section 6 */}
-        <section className='bg-[#0a272b] p-8 rounded-lg shadow-lg'>
-          <h2 className='text-3xl font-semibold text-[#4d7374] mb-4'>
-            Tailored Solutions for MENA Investors
-          </h2>
-          <p className='text-lg mb-6'>
-            Angelsta’s portfolio management tools are designed to align with the
-            unique dynamics of the MENA startup ecosystem.
-          </p>
-          <ul className='space-y-2 list-disc list-inside'>
-            <li>Localized Insights: Focused on MENA market trends.</li>
-            <li>
-              Sector-Specific Analysis: Target key growth industries like
-              fintech, e-commerce, and energy.
-            </li>
-            <li>
-              Investment Strategy Alignment: Optimize your portfolio for the
-              MENA region.
-            </li>
-          </ul>
-          <Link
-            href='/services/mena-portfolio-management'
-            className='mt-6 inline-block bg-gradient-to-r from-[#87bab3] to-[#4d7374] text-[#0a1622] font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-105 transition-transform'>
-            Optimize Your Portfolio for MENA
-          </Link>
-        </section>
-
-        {/* Final CTA */}
-        <div className='text-center mt-12'>
-          <h2 className='text-3xl font-semibold text-[#87bab3] mb-8'>
-            Take Control of Your Startup Portfolio with Angelsta’s AI-Powered
-            Tools
-          </h2>
-          <Link
-            href='/sign-up'
-            className='bg-gradient-to-r from-[#87bab3] to-[#4d7374] text-[#0a1622] font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-transform'>
-            Sign Up for Portfolio Management
-          </Link>
+          {/* Final CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            className='text-center lg:text-left mt-10 space-y-6'>
+            <h3 className='text-4xl font-extrabold text-[#87bab3]'>
+              Take Control of Your Startup Portfolio with Angelsta’s AI-Powered
+              Tools
+            </h3>
+            <button className='px-10 py-4 text-xl font-semibold text-[#0a1622] bg-[#87bab3] rounded-full hover:bg-[#4d7374] transition-colors'>
+              Sign Up for Portfolio Management
+            </button>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
