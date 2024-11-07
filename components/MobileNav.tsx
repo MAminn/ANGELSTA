@@ -16,105 +16,66 @@ interface NavMenuProps {
   session: Session | null;
 }
 
-const MobileNav: React.FC<NavMenuProps> = (props) => {
-  const session = props.session;
-  const [submenuOpen, setSubmenuOpen] = useState(false);
-  if (session) {
-    return (
-      <section className="md:hidden mt-2">
-        <Sheet>
-          <SheetTrigger>
-            <FaBars size={24} />
-          </SheetTrigger>
-          <SheetContent className="bg-[#001d21f3] text-white flex justify-center w-full">
-            <ul className="flex flex-col mt-8 text-center">
-              {links.slice(0, 5).map((link, index) => (
-                <li key={index} className="relative group py-6">
-                  <li key={index}>
-                    {!link.sublinks ? (
-                      <SheetClose asChild>
-                        <Link href={link.path}>{link.name}</Link>
+const MobileNav: React.FC<NavMenuProps> = ({ session }) => {
+  const [submenuOpen, setSubmenuOpen] = useState<number | null>(null);
+
+  return (
+    <section className='md:hidden'>
+      <Sheet>
+        <SheetTrigger>
+          <FaBars size={24} className='text-[#87bab3]' />
+        </SheetTrigger>
+        <SheetContent className='bg-[#0a272b] text-white w-full p-6'>
+          <ul className='flex flex-col space-y-6 text-center'>
+            {links.map((link, idx) => (
+              <li key={idx} className='group'>
+                <button
+                  onClick={() =>
+                    setSubmenuOpen(submenuOpen === idx ? null : idx)
+                  }
+                  className='flex items-center justify-between w-full py-2 text-lg font-medium'>
+                  <span>{link.name}</span>
+                  {link.sublinks && (
+                    <span>
+                      {submenuOpen === idx ? (
+                        <FaChevronUp />
+                      ) : (
+                        <FaChevronDown />
+                      )}
+                    </span>
+                  )}
+                </button>
+                {link.sublinks && submenuOpen === idx && (
+                  <div className='flex flex-col mt-2 space-y-2 text-left pl-4'>
+                    {link.sublinks.map((sub, subIdx) => (
+                      <SheetClose key={subIdx} asChild>
+                        <Link
+                          href={sub.path}
+                          className='block py-1 text-[#87bab3] text-sm'>
+                          {sub.name}
+                        </Link>
                       </SheetClose>
-                    ) : (
-                      <div>
-                        <button
-                          onClick={() => setSubmenuOpen(!submenuOpen)}
-                          className="flex items-center justify-between w-full py-2"
-                        >
-                          <span>{link.name}</span>
-                          <span>
-                            {!submenuOpen ? <FaChevronDown /> : <FaChevronUp />}
-                          </span>
-                        </button>
-                        {submenuOpen && (
-                          <div className="space-y-2">
-                            {link.sublinks.map((sub, idx) => (
-                              <SheetClose key={idx} asChild>
-                                <Link href={sub.path} className="block py-2">
-                                  {sub.name}
-                                </Link>
-                              </SheetClose>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </li>
-                </li>
-              ))}
-              <button className="py-4" onClick={() => signOut()}>
+                    ))}
+                  </div>
+                )}
+              </li>
+            ))}
+            {session ? (
+              <button
+                onClick={() => signOut()}
+                className='py-4 text-lg text-[#87bab3]'>
                 Sign Out
               </button>
-            </ul>
-          </SheetContent>
-        </Sheet>
-      </section>
-    );
-  } else {
-    return (
-      <section className="md:hidden mt-2">
-        <Sheet>
-          <SheetTrigger>
-            <FaBars size={24} />
-          </SheetTrigger>
-          <SheetContent className="bg-[#001d21f3] text-white flex justify-center w-full">
-            <ul className="mt-8 text-center">
-              {links.map((link, idx) => (
-                <li key={idx} className="py-6">
-                  {!link.sublinks ? (
-                    <SheetClose asChild>
-                      <Link href={link.path}>{link.name}</Link>
-                    </SheetClose>
-                  ) : (
-                    <div>
-                      <button
-                        onClick={() => setSubmenuOpen(!submenuOpen)}
-                        className="flex items-center justify-between w-full py-2"
-                      >
-                        <span>{link.name}</span>
-                        <FaChevronDown />
-                      </button>
-                      {submenuOpen && (
-                        <div className="ml-4 space-y-2">
-                          {link.sublinks.map((sub, idx) => (
-                            <SheetClose key={idx} asChild>
-                              <Link href={sub.path} className="block py-2">
-                                {sub.name}
-                              </Link>
-                            </SheetClose>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </SheetContent>
-        </Sheet>
-      </section>
-    );
-  }
+            ) : (
+              <Link href='/login' className='py-4 text-lg text-[#87bab3]'>
+                Login
+              </Link>
+            )}
+          </ul>
+        </SheetContent>
+      </Sheet>
+    </section>
+  );
 };
 
 export default MobileNav;

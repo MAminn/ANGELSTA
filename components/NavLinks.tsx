@@ -1,105 +1,63 @@
 "use client";
-import { links } from "@/server/constants"; 
+import { links } from "@/server/constants";
 import Link from "next/link";
-import MobileNav from "./MobileNav";
 import { signOut } from "next-auth/react";
 import { Session } from "next-auth";
+import { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 
 interface NavMenuProps {
   session: Session | null;
 }
 
-const NavLinks: React.FC<NavMenuProps> = (props) => {
-  const session = props.session;
+const NavLinks: React.FC<NavMenuProps> = ({ session }) => {
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
-  if (session) {
-    return (
-      <>
-        <div className="flex justify-between items-center h-24 max-w-[1240px] w-full px-4 py-12 bg-white text-[#000000] relative z-20">
-          <ul className="flex max-md:hidden">
-            {links.slice(0, 5).map((link, index) => (
-              <li key={index} className="relative group">
+  return (
+    <ul className='flex items-center gap-6 text-lg font-semibold'>
+      {links.slice(0, 5).map((link, index) => (
+        <li key={index} className='relative group'>
+          <button
+            onClick={() =>
+              setOpenDropdown(openDropdown === index ? null : index)
+            }
+            className='flex items-center text-[#d1d7d7] hover:text-[#87bab3] transition-all duration-300'>
+            {link.name}
+            {link.submenu && (
+              <span className='ml-1'>
+                {openDropdown === index ? <FaChevronUp /> : <FaChevronDown />}
+              </span>
+            )}
+          </button>
+          {link.submenu && openDropdown === index && (
+            <div className='absolute top-full left-0 mt-2 w-48 bg-[#0a272b] p-4 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out'>
+              {link.sublinks?.map((subLink) => (
                 <Link
-                  href={link.path}
-                  className="text-[#000]  px-6 py-4 rounded"
-                >
-                  {link.name}
+                  key={subLink.name}
+                  href={subLink.path}
+                  className='block text-sm text-[#d1d7d7] hover:text-[#87bab3] transition-colors duration-200 py-1'>
+                  {subLink.name}
                 </Link>
-                {link.submenu && (
-                  <div>
-                    <div className="absolute top-full left-5 hidden group-hover:md:block hover:md:block">
-                      <div className="py-3">
-                        <div className="w-4 h-4 absolute left-3 mt-1 bg-white rotate-45"></div>
-                      </div>
-                      <div className="bg-white p-4  rounded-lg">
-                        {link.sublinks?.map((subLinks) => (
-                          <div key={subLinks.name}>
-                            <li className="text-sm text-gray-600 my-2.5">
-                              <Link
-                                href={subLinks.path}
-                                className="hover:text-[#000] font-semibold"
-                              >
-                                {subLinks.name}
-                              </Link>
-                            </li>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </li>
-            ))}
-            <button onClick={() => signOut()}>Sign Out</button>
-          </ul>
-          <MobileNav session={session} />
-        </div>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <div className="flex justify-around items-center h-24 w-full px-4 py-12 bg-white text-[#000000] relative">
-          <ul className="flex max-md:hidden">
-            {links.map((link, index) => (
-              <li key={index} className="relative group">
-                <Link
-                  href={link.path}
-                  className="text-[#000]  px-6 py-4 rounded"
-                >
-                  {link.name}
-                </Link>
-                {link.submenu && (
-                  <div>
-                    <div className="absolute top-full left-5 hidden group-hover:md:block hover:md:block">
-                      <div className="py-3">
-                        <div className="w-4 h-4 absolute left-3 mt-1 bg-white rotate-45"></div>
-                      </div>
-                      <div className="bg-white p-4  rounded-lg">
-                        {link.sublinks?.map((subLinks) => (
-                          <div key={subLinks.name}>
-                            <li className="text-sm text-gray-600 my-2.5">
-                              <Link
-                                href={subLinks.path}
-                                className="hover:text-[#000] font-semibold"
-                              >
-                                {subLinks.name}
-                              </Link>
-                            </li>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
-          <MobileNav session={session} />
-        </div>
-      </>
-    );
-  }
+              ))}
+            </div>
+          )}
+        </li>
+      ))}
+      {session ? (
+        <button
+          onClick={() => signOut()}
+          className='text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300'>
+          Sign Out
+        </button>
+      ) : (
+        <Link
+          href='/login'
+          className='text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300'>
+          Login
+        </Link>
+      )}
+    </ul>
+  );
 };
 
 export default NavLinks;
