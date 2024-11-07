@@ -1,164 +1,114 @@
-"use client";
-import React from "react";
+'use client'
 import { motion } from "framer-motion";
+import Image from "next/image";
+import blockchainGraphic from "@/public/images/blockchain-graphic.png";
 
-const BlockchainMarketplace: React.FC = () => {
+const BlockchainMarketplacePage = () => {
   return (
-    <div className="bg-[#0b1622] text-[#d1d7d7] font-sans">
-      {/* Header Section */}
-      <section className="text-center py-20 bg-gradient-to-b from-[#0b1622] to-[#0b272d]">
-        <motion.h1
-          className="text-4xl lg:text-5xl font-bold mb-4 max-xs:text-3xl"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Blockchain-Backed Marketplace for MENA Startups & Investors
-        </motion.h1>
-        <motion.p
-          className="text-xl text-[#86bbb0] mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          Buy, sell, and invest in shares securely using blockchain technology.
-        </motion.p>
+    <div className='bg-[#0a1622] text-[#d1d7d7] font-sans'>
+      {/* Hero Section */}
+      <section className='py-20 text-center'>
+        <h1 className='text-4xl font-bold text-[#87bab3]'>
+          Secure, Transparent, Blockchain-Powered Marketplace
+        </h1>
+        <p className='mt-4 text-lg'>
+          Invest with Confidence in MENA’s Blockchain-Driven Marketplace.
+        </p>
         <motion.button
-          className="bg-[#4c7375] hover:bg-[#86bbb0] text-[#ffffff] font-semibold py-3 px-8 max-xs:py-4 max-xs:px-6 max-sm:text-sm rounded-full transition duration-300 transform hover:scale-105"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          Explore the Blockchain Marketplace
+          whileHover={{ scale: 1.05 }}
+          className='mt-8 px-8 py-3 border border-[#87bab3] text-[#d1d7d7] hover:bg-[#0a272b] hover:text-white transition duration-200'>
+          Join the Blockchain Marketplace
         </motion.button>
       </section>
 
-      {/* Section 1: Blockchain Ensuring Transparency */}
-      <section className="py-16 px-6 md:px-12 lg:px-32 bg-[#0b272d]">
-        <h2 className="text-3xl font-bold mb-6 max-xs:text-center">
-          Why Blockchain Matters in MENA’s Startup Ecosystem
-        </h2>
-        <p className="text-[#86bbb0] mb-8 max-xs:text-center">
-          In a rapidly growing market like MENA, transparency and security are
-          paramount. Angelsta’s blockchain ensures that every transaction on our
-          marketplace is secure and immutable, allowing investors to trade
-          shares with confidence.
-        </p>
-        {/* Feature List */}
-        <div className="space-y-6">
-          {/* Feature Items */}
-          {[
-            "Tamper-Proof Transactions",
-            "Full Visibility",
-            "Cross-Border Investments",
-          ].map((title, index) => (
+      {/* Section 1: Blockchain Security */}
+      <section className='py-16 bg-[#0a272b] px-8 md:px-20 lg:px-32'>
+        <div className='max-w-3xl mx-auto text-center'>
+          <h2 className='text-3xl font-bold text-[#87bab3]'>
+            Blockchain Security
+          </h2>
+          <p className='mt-6 text-lg text-[#d1d7d7]'>
+            Angelsta’s marketplace leverages blockchain technology to provide
+            unparalleled security and transparency in every transaction.
+          </p>
+          <div className='mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 md:grid-cols-3'>
             <motion.div
-              key={index}
-              className="flex items-start gap-4 hover:scale-105 transition-transform duration-300 max-xs:flex-col max-xs:items-center max-xs:justify-center"
               whileHover={{ scale: 1.05 }}
-            >
-              <div className="w-10 h-10 bg-[#4c7375] rounded-full" />
-              <div>
-                <h3 className="text-2xl font-semibold text-[#d1d7d7] max-xs:text-center">
-                  {title}
-                </h3>
-                <p className="text-[#86bbb0] max-xs:text-center">
-                  Feature description here.
-                </p>
-              </div>
+              className='p-6 border border-[#4d7374] bg-[#0a272b] rounded-lg shadow-md transition duration-200 hover:bg-[#0a3a3f]'>
+              <h3 className='text-xl font-semibold text-[#87bab3]'>
+                Tamper-Proof Security
+              </h3>
+              <p className='mt-2 text-[#d1d7d7]'>
+                Enjoy peace of mind with blockchain-verified transactions.
+              </p>
             </motion.div>
-          ))}
-        </div>
-        <button className="mt-10 bg-[#4c7375] hover:bg-[#86bbb0] text-[#ffffff] font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-          Explore the Blockchain Marketplace
-        </button>
-      </section>
 
-      {/* Section: Blockchain Benefits at a Glance */}
-      <section className="py-16 px-6 md:px-12 lg:px-32 bg-gradient-to-b from-[#4c7375] to-[#86bbb0] text-[#0b1622]">
-        <h2 className="text-3xl font-bold mb-6">
-          Blockchain Benefits at a Glance
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {["Security", "Global Reach", "Cost Savings"].map(
-            (benefit, index) => (
-              <motion.div
-                key={index}
-                className="p-6 bg-[#0b272d] rounded-lg shadow-lg hover:shadow-xl transition duration-300"
-                whileHover={{ scale: 1.05 }}
-              >
-                <h3 className="text-xl font-semibold mb-2 text-[#86bbb0]">
-                  {benefit}
-                </h3>
-                <p className="text-sm text-[#d1d7d7]">
-                  Benefit description here.
-                </p>
-              </motion.div>
-            )
-          )}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className='p-6 border border-[#4d7374] bg-[#0a272b] rounded-lg shadow-md transition duration-200 hover:bg-[#0a3a3f]'>
+              <h3 className='text-xl font-semibold text-[#87bab3]'>
+                Cross-Border Accessibility
+              </h3>
+              <p className='mt-2 text-[#d1d7d7]'>
+                Securely invest across the MENA region with confidence.
+              </p>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className='p-6 border border-[#4d7374] bg-[#0a272b] rounded-lg shadow-md transition duration-200 hover:bg-[#0a3a3f]'>
+              <h3 className='text-xl font-semibold text-[#87bab3]'>
+                Transparency & Trust
+              </h3>
+              <p className='mt-2 text-[#d1d7d7]'>
+                Blockchain technology ensures a transparent marketplace.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Section 2: Secure Transactions for MENA Startups & Investors */}
-      <section className="py-16 px-6 md:px-12 lg:px-32 bg-[#0b1622] text-[#d1d7d7] max-xs:text-center">
-        <h2 className="text-3xl font-bold mb-6">
-          Cross-Border Startup Investments Made Simple with Blockchain
-        </h2>
-        <div className="space-y-6">
-          {/* Feature Items */}
-          {["Secure & Transparent", "Global Reach", "Lower Fees"].map(
-            (title, index) => (
-              <motion.div
-                key={index}
-                className="flex items-start gap-4 duration-300  max-xs:flex-col max-xs:items-center max-xs:justify-center"
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="w-10 h-10 bg-[#0b272d] rounded-full " />
-                <div>
-                  <h3 className="text-2xl font-semibold">{title}</h3>
-                  <p>Feature description here.</p>
-                </div>
-              </motion.div>
-            )
-          )}
-        </div>
-        <button className="mt-10 bg-[#0b272d] hover:bg-[#4c7375] text-[#d1d7d7] font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-          Join the Marketplace Today
-        </button>
-      </section>
-
-      {/* Section: Testimonials */}
-      <section className="py-16 px-6 md:px-12 lg:px-32 bg-[#0b1622] text-center">
-        <h2 className="text-3xl font-bold mb-6 text-[#d1d7d7]">
-          What Our Users Say
-        </h2>
-        <motion.div
-          className="space-y-4 max-w-lg mx-auto text-[#86bbb0]"
-          animate={{ opacity: [0, 1], scale: [0.9, 1] }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <p>
-            &quot;Blockchain transactions have never been this simple and
-            secure!&quot;
+      {/* Section 2: Cross-border Accessibility */}
+      <section className='py-12 px-8 md:px-20 lg:px-32 text-center'>
+        <div className='max-w-3xl mx-auto border-t border-[#4d7374] pt-10'>
+          <h2 className='text-2xl font-semibold text-[#4d7374]'>
+            Cross-border Accessibility
+          </h2>
+          <p className='mt-4'>
+            Invest in startups across the MENA region with blockchain-driven
+            security and peace of mind.
           </p>
-          <p>
-            &quot;Angelsta&apos;s platform opens doors to cross-border
-            opportunities.&quot;
-          </p>
-        </motion.div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className='mt-8 px-8 py-3 border border-[#87bab3] text-[#d1d7d7] hover:bg-[#0a272b] hover:text-white transition duration-200'>
+            Explore Accessibility Features
+          </motion.button>
+        </div>
       </section>
 
-      {/* Footer CTA */}
-      <section className="text-center py-12 bg-gradient-to-b from-[#0b1622] to-[#0b272d] flex flex-col items-center space-y-4">
-        <p className="text-xl text-[#d1d7d7] px-6 py-4">
-          Empowering secure investments for the MENA region
-        </p>
-        <button className="bg-[#4c7375] hover:bg-[#86bbb0] text-[#ffffff] font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-          Get Started with Angelsta
-        </button>
+      {/* Section 3: Market Integrity */}
+      <section className='py-12 bg-[#0a1622] px-8 md:px-20 lg:px-32'>
+        <div className='max-w-3xl mx-auto text-center'>
+          <h2 className='text-2xl font-semibold text-[#87bab3] mb-6'>
+            Market Integrity You Can Rely On
+          </h2>
+          <div className='flex justify-center mb-6'>
+            <Image
+              src={blockchainGraphic}
+              alt='Blockchain Security Graphic'
+              width={400}
+              height={300}
+            />
+          </div>
+          <p className='text-[#d1d7d7]'>
+            Angelsta’s blockchain technology ensures integrity in every
+            transaction, giving investors confidence and transparency in the
+            marketplace.
+          </p>
+        </div>
       </section>
     </div>
   );
 };
 
-export default BlockchainMarketplace;
+export default BlockchainMarketplacePage;
