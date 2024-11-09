@@ -1,4 +1,5 @@
 import { auth, signIn } from "@/auth";
+import { guardVerifiedSession } from "@/server/utils";
 
 export default async function LayoutForm({
   children,
@@ -6,7 +7,7 @@ export default async function LayoutForm({
   children: React.ReactNode;
 }>) {
   const session = await auth();
-
+  guardVerifiedSession(session);
   if (!session) {
     return signIn();
   }

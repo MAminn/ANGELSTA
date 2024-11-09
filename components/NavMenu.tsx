@@ -8,12 +8,18 @@ import auth from "@/auth";
 const NavMenu: React.FC = async () => {
   const session = await auth();
   return (
-    <nav className='bg-transparent fixed w-full z-50'>
-      <div className='flex justify-between items-center h-20 w-full pr-6 lg:pr-16 lg:pl-4 bg-opacity-70 backdrop-blur-md text-[#d1d7d7] shadow-md'>
-        <Link href='/' className='flex items-center'>
-          <Image src={mainLogo} alt='mainlogo' width={300} height={300} className="w-full h-full" />
+    <nav className="bg-transparent fixed w-full z-50">
+      <div className="flex justify-between items-center h-20 w-full pr-6 lg:pr-16 lg:pl-4 bg-opacity-70 backdrop-blur-md text-[#d1d7d7] shadow-md">
+        <Link href="/" className="flex items-center">
+          <Image
+            src={mainLogo}
+            alt="mainlogo"
+            width={300}
+            height={300}
+            className="w-full h-full"
+          />
         </Link>
-        <ul className='hidden md:flex items-center gap-8'>
+        <ul className="hidden md:flex items-center gap-8">
           <NavLinks session={session} />
         </ul>
         <MobileNav session={session} />

@@ -4,14 +4,14 @@ import nodemailer from "nodemailer";
 import Token from "./models/Token";
 import crypto from "crypto";
 
-export default function guardSession(
-  session?: Session | null
-): session is Session {
-  if (!session) {
-    redirect("/auth/signin");
-  }
-  return true;
-}
+// export default function guardSession(
+//   session?: Session | null
+// ): session is Session {
+//   if (!session) {
+//     redirect("/auth/signin");
+//   }
+//   return true;
+// }
 
 export async function sendVerificationEmail(user: {
   id: string;
@@ -45,4 +45,13 @@ export async function sendVerificationEmail(user: {
   };
 
   await transporter.sendMail(mailOptions);
+}
+
+export function guardVerifiedSession(session?: Session | null) {
+  if (!session) {
+    return;
+  }
+  if (session?.user.isVerified === true) {
+    redirect("/portfolio/investments");
+  }
 }

@@ -14,28 +14,31 @@ const NavLinks: React.FC<NavMenuProps> = ({ session }) => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
   return (
-    <ul className='flex items-center gap-6 text-lg font-semibold'>
+    <ul className="flex items-center gap-6 text-lg font-semibold">
       {links.slice(0, 5).map((link, index) => (
-        <li key={index} className='relative group'>
-          <button
+        <li key={index} className="relative group">
+          <Link
+            href={link.path || "#"}
             onClick={() =>
               setOpenDropdown(openDropdown === index ? null : index)
             }
-            className='flex items-center text-[#d1d7d7] hover:text-[#87bab3] transition-all duration-300'>
+            className="flex items-center text-[#d1d7d7] hover:text-[#87bab3] transition-all duration-300"
+          >
             {link.name}
             {link.submenu && (
-              <span className='ml-1'>
+              <span className="ml-1">
                 {openDropdown === index ? <FaChevronUp /> : <FaChevronDown />}
               </span>
             )}
-          </button>
+          </Link>
           {link.submenu && openDropdown === index && (
-            <div className='absolute top-full left-0 mt-2 w-48 bg-[#0a272b] p-4 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out'>
+            <div className="absolute top-full left-0 mt-2 w-48 bg-[#0a272b] p-4 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               {link.sublinks?.map((subLink) => (
                 <Link
                   key={subLink.name}
                   href={subLink.path}
-                  className='block text-sm text-[#d1d7d7] hover:text-[#87bab3] transition-colors duration-200 py-1'>
+                  className="block text-sm text-[#d1d7d7] hover:text-[#87bab3] transition-colors duration-200 py-1"
+                >
                   {subLink.name}
                 </Link>
               ))}
@@ -46,19 +49,22 @@ const NavLinks: React.FC<NavMenuProps> = ({ session }) => {
       {session ? (
         <button
           onClick={() => signOut()}
-          className='text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300'>
+          className="text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300"
+        >
           Sign Out
         </button>
       ) : (
         <>
           <Link
-            href='/auth/signin'
-            className='text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300'>
+            href="/auth/signin"
+            className="text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300"
+          >
             Login
           </Link>
           <Link
-            href='/auth/signup'
-            className='text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300'>
+            href="/auth/signup"
+            className="text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300"
+          >
             Sign up
           </Link>
         </>

@@ -9,6 +9,7 @@ const SignIn = () => {
   const [loading, setLoading] = useState(false); // New loading state
   const router = useRouter();
   const [showCard, setShowCard] = useState(false);
+  const [message, setMessage] = useState(""); // New state for messages
 
   useEffect(() => {
     setTimeout(() => setShowCard(true), 100);
@@ -25,10 +26,10 @@ const SignIn = () => {
     setLoading(false); // Set loading state to false after sign-in attempt
 
     if (result?.error) {
-      // Handle sign-in error
-      console.error(result.error);
+      setMessage("Please make sure to verify your Email"); // Customize based on error content
     } else {
-      router.refresh(); // Redirect on success
+      setMessage(`Login successful, Welcome ${email}`);
+      router.refresh(); // Optional: redirect or refresh
     }
   };
 
@@ -85,6 +86,16 @@ const SignIn = () => {
         >
           {loading ? "Signing In..." : "Sign In"} {/* Dynamic button text */}
         </button>
+
+        {message && (
+          <p
+            className={`text-sm mt-4 text-center ${
+              message.includes("successful") ? "text-green-500" : "text-red-500"
+            }`}
+          >
+            {message}
+          </p>
+        )}
       </form>
     </div>
   );

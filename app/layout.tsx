@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import NavMenu from "@/components/NavMenu";
-
+import auth from "@/auth";
+import { SessionProvider } from "next-auth/react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,14 +29,17 @@ export default async function GlobalLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.variable} ${playfairDisplay.variable} antialiased`}
-      >
-        <NavMenu />
-        {children}
-      </body>
+      <SessionProvider session={session}>
+        <body
+          className={`${montserrat.variable} ${playfairDisplay.variable} antialiased`}
+        >
+          <NavMenu />
+          {children}
+        </body>
+      </SessionProvider>
     </html>
   );
 }

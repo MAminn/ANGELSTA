@@ -5,9 +5,8 @@ import React from "react";
 
 const Page = async () => {
   const session = await auth();
-
-  if (session) {
-    redirect("/");
+  if (session?.user.isVerified === true) {
+    redirect("/portfolio/investments");
   }
   return (
     <div>
