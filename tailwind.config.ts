@@ -107,7 +107,7 @@ const config = {
         xs: "321px",
       },
       height: {
-        "navbar-height": "calc(100vh - 96px)",
+        "navbar-height": "calc(100vh)",
       },
     },
   },

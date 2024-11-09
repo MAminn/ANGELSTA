@@ -5,7 +5,7 @@ import blockchainGraphic from "@/public/images/blockchain-graphic.png";
 
 const BlockchainMarketplacePage = () => {
   return (
-    <div className='bg-[#0a1622] text-[#d1d7d7] font-sans'>
+    <div className='bg-[#0a1622] text-[#d1d7d7] font-sans pt-20'>
       {/* Hero Section */}
       <section className='py-20 text-center'>
         <h1 className='text-4xl font-bold text-[#87bab3]'>

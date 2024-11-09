@@ -1,10 +1,11 @@
-'use client'
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
 const AIPoweredValuation = () => {
   return (
-    <section className='px-8 py-20 bg-[#0a1622] text-gray-100'>
+    <section
+      className='px-8 py-32 h-screen bg-[#0a1622] text-gray-100'>
       <div className='max-w-5xl mx-auto space-y-10'>
         {/* Header Section */}
         <motion.div

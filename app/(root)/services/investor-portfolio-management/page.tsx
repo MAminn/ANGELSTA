@@ -4,7 +4,7 @@ import React from "react";
 
 const InvestorPortfolioManagement = () => {
   return (
-    <section className='px-8 py-24 bg-[#0a1622]'>
+    <section className='px-8 py-28 bg-[#0a1622]'>
       <div className='max-w-7xl mx-auto space-y-20 text-center lg:text-left'>
         {/* Headline Section */}
         <motion.div
@@ -12,10 +12,10 @@ const InvestorPortfolioManagement = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className='space-y-4'>
-          <h1 className='text-4xl font-extrabold text-[#87bab3]'>
+          <h1 className='text-4xl font-extrabold text-[#87bab3] text-center'>
             Manage and Grow Your Startup Portfolio with AI-Powered Insights
           </h1>
-          <h2 className='text-xl font-medium text-[#d1d7d7]'>
+          <h2 className='text-xl font-medium text-[#d1d7d7] text-center'>
             Optimize your portfolio strategy, assess new investment
             opportunities, and track startup performance with Angelsta’s
             comprehensive portfolio management solutions.
@@ -120,9 +120,9 @@ const InvestorPortfolioManagement = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className='text-center lg:text-left mt-10 space-y-6'>
+            className='text-center mt-10 space-y-6'>
             <h3 className='text-4xl font-extrabold text-[#87bab3]'>
-              Take Control of Your Startup Portfolio with Angelsta’s AI-Powered
+              Take Control of Your Startup Portfolio with Angelsta&apos;s AI-Powered
               Tools
             </h3>
             <button className='px-10 py-4 text-xl font-semibold text-[#0a1622] bg-[#87bab3] rounded-full hover:bg-[#4d7374] transition-colors'>

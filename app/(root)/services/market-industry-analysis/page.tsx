@@ -4,8 +4,8 @@ import React from "react";
 
 const MarketIndustryAnalysis = () => {
   return (
-    <section className='relative px-8 py-24 bg-[#0a1622]'>
-      <div className='max-w-5xl mx-auto space-y-10 text-center lg:text-left'>
+    <section className='relative px-8 py-32 bg-[#0a1622] h-screen'>
+      <div className='max-w-5xl mx-auto space-y-10 text-center'>
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -14,7 +14,7 @@ const MarketIndustryAnalysis = () => {
           <h1 className='text-4xl font-extrabold text-[#87bab3]'>
             AI-Driven Market Intelligence Tailored for MENA Startups
           </h1>
-          <p className='text-lg text-[#d1d7d7] max-w-2xl mx-auto lg:mx-0'>
+          <p className='text-lg text-[#d1d7d7] max-w-2xl mx-auto lg:mx-auto'>
             Angelsta provides in-depth AI-powered market analysis to help
             startups and investors stay ahead in the MENA region. Whether you&apos;re
             looking to scale your business or evaluate investment opportunities,
@@ -68,7 +68,7 @@ const MarketIndustryAnalysis = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className='text-center lg:text-left mt-10'>
+          className='text-center mt-10'>
           <button className='px-8 py-3 text-lg font-semibold text-[#0a1622] bg-[#87bab3] rounded-full hover:bg-[#4d7374] transition-colors'>
             Explore Market Insights
           </button>

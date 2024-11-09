@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const SyndicateFunds: React.FC = () => {
   return (
-    <div className='bg-[#0a1622] text-[#d1d7d7] min-h-screen py-12'>
+    <div className='bg-[#0a1622] text-[#d1d7d7] min-h-screen py-28'>
       <div className='container mx-auto px-6 lg:px-12 space-y-10 pt-6 max-md:text-center'>
         {/* Headline and Subheadline */}
         <header className='text-center'>

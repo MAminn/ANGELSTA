@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const BlockchainMarketplace: React.FC = () => {
   return (
-    <div className='bg-[#0b1622] text-[#d1d7d7] font-sans'>
+    <div className='bg-[#0b1622] text-[#d1d7d7] font-sans pt-16'>
       {/* Header Section */}
       <section className='text-center py-20 bg-gradient-to-b from-[#0b1622] to-[#0b272d]'>
         <motion.h1

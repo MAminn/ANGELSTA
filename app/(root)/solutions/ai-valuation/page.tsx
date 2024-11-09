@@ -6,7 +6,7 @@ import React from "react";
 
 const AIValuationPage = () => {
   return (
-    <section className='px-8 py-20 bg-[#0a1622]'>
+    <section className='px-8 py-28 bg-[#0a1622]'>
       <div className='max-w-7xl mx-auto space-y-20'>
         {/* Hero Section */}
         <motion.div
