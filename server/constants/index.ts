@@ -45,16 +45,16 @@ export const links: NavLink[] = [
     path: "/aboutUs",
     submenu: false,
   },
-  {
-    name: "Login",
-    path: "/auth/signin",
-    submenu: false,
-  },
-  {
-    name: "Sign Up",
-    path: "/auth/signup",
-    submenu: false,
-  },
+  // {
+  //   name: "Login",
+  //   path: "/auth/signin",
+  //   submenu: false,
+  // },
+  // {
+  //   name: "Sign Up",
+  //   path: "/auth/signup",
+  //   submenu: false,
+  // },
 ];
 
 export const SidebarLinks = [

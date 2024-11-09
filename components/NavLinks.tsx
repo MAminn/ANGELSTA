@@ -50,11 +50,18 @@ const NavLinks: React.FC<NavMenuProps> = ({ session }) => {
           Sign Out
         </button>
       ) : (
-        <Link
-          href='/login'
-          className='text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300'>
-          Login
-        </Link>
+        <>
+          <Link
+            href='/auth/signin'
+            className='text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300'>
+            Login
+          </Link>
+          <Link
+            href='/auth/signup'
+            className='text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300'>
+            Sign up
+          </Link>
+        </>
       )}
     </ul>
   );

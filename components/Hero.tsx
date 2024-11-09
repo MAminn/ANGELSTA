@@ -10,7 +10,7 @@ import { LuPackageOpen } from "react-icons/lu";
 
 const Hero: React.FC = () => {
   return (
-    <section className='bg-gradient-to-br from-[#0a1622] to-[#0a272b] text-[#d1d7d7] py-20'>
+    <section className='bg-gradient-to-br from-[#0a1622] to-[#0a272b] text-[#d1d7d7] py-28'>
       <div className='container mx-auto px-6 lg:px-12'>
         {/* Heading Section */}
         <div className='text-center mb-12'>

@@ -67,9 +67,18 @@ const MobileNav: React.FC<NavMenuProps> = ({ session }) => {
                 Sign Out
               </button>
             ) : (
-              <Link href='/login' className='py-4 text-lg text-[#87bab3]'>
-                Login
-              </Link>
+              <>
+                <Link
+                  href='/auth/signin'
+                  className='py-4 text-lg text-[#87bab3]'>
+                  Login
+                </Link>
+                <Link
+                  href='/auth/signup'
+                  className='py-4 text-lg text-[#87bab3]'>
+                  Sing up
+                </Link>
+              </>
             )}
           </ul>
         </SheetContent>
