@@ -1,76 +1,72 @@
-// import Image from "next/image";
-// import investor from "@/public/images/img-capital-hero.svg";
-// import bgInvestor from "@/public/images/accent-green-bt-ct.svg";
-// import angel from "@/public/images/img-logo-angellist.svg";
-import invesment1 from "@/public/images/investmentOne.svg";
-import invesment2 from "@/public/images/investmentOneBottom.svg";
-import invesment3 from "@/public/images/investmentTwo.svg";
-import invesment4 from "@/public/images/investmentsThree.svg";
-import invesment5 from "@/public/images/investmentThreeBottom.svg";
-import invesment6 from "@/public/images/img-logo-mevo.svg";
-
+'use client'
+import { motion } from "framer-motion";
 import Link from "next/link";
-import InvesmentsCards from "./InvesmentsCards";
 
 const SectionInvestment = () => {
   return (
-    <section className='pt-8 pb-12 bg-[#0a1622] overflow-hidden lg:pt-20'>
+    <section className='pt-12 pb-16 bg-[#0a1622] overflow-hidden lg:pt-32'>
       <div className='container mx-auto text-center px-6'>
         {/* Header Section */}
-        <div className='text-center max-w-2xl mx-auto mb-12'>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className='text-center  mx-auto mb-12'>
           <h1 className='text-4xl md:text-5xl font-extrabold text-[#d1d7d7] mb-4'>
-            Data-Driven Fund for High-Potential Startups
+            Unlock High-Quality Investments with AI-Driven Recommendations
           </h1>
           <p className='text-lg text-[#87bab3] font-medium mb-8'>
-            Invest in a diversified portfolio of MENA’s top-rated startups
+            Angelsta gives investors access to curated startup opportunities
+            backed by AI-driven valuations and real-time market intelligence.
+            Whether you&apos;re investing in early-stage startups or looking to
+            expand your portfolio, Angelsta provides the tools to help you make
+            data-driven decisions with confidence
           </p>
-          <div className='flex justify-center gap-4'>
-            <Link href='/' className='btn-primary'>
-              Schedule a Call
-            </Link>
-            <Link href='/' className='btn-secondary'>
-              Invest Now
-            </Link>
-          </div>
-        </div>
+          <Link href='/' className='btn-primary'>
+            Start Building Your Portfolio
+          </Link>
+        </motion.div>
 
-        {/* Investment Highlights Section */}
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 my-12'>
-          <InvesmentsCards
-            img={invesment1}
-            text='Investment Horizon:'
-            strongText='9 Years'
-            number='4300x'
-            imgTwo={invesment2}
-          />
-          <InvesmentsCards
-            img={invesment3}
-            text='Startup Growth:'
-            strongText='Top Tier'
-            number='3200x'
-            imgTwo={invesment2}
-          />
-          <InvesmentsCards
-            img={invesment4}
-            text='Global Reach:'
-            strongText='MENA Focus'
-            number='1500x'
-            imgTwo={invesment5}
-          />
-          <InvesmentsCards
-            img={invesment6}
-            text='Market Value:'
-            strongText='Expanding'
-            number='2300x'
-            imgTwo={invesment5}
-          />
-        </div>
+        {/* Content Section */}
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-12'>
+          {/* Individual Features */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            className='bg-[#4d7374] p-8 rounded-lg text-white'>
+            <h3 className='text-xl font-semibold mb-3'>
+              AI-Powered Recommendations
+            </h3>
+            <p className='text-[#d1d7d7]'>
+              Leverage AI to discover startups with the highest growth potential
+              in the MENA region.
+            </p>
+          </motion.div>
 
-        {/* CTA Section */}
-        <div className='bg-[#4d7374] p-8 rounded-lg text-white text-center max-w-xl mx-auto mt-8'>
-          <p className='text-2xl font-semibold'>
-            The next unicorns are raising capital—join us!
-          </p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+            className='bg-[#4d7374] p-8 rounded-lg text-white'>
+            <h3 className='text-xl font-semibold mb-3'>Data-Driven Insights</h3>
+            <p className='text-[#d1d7d7]'>
+              Make informed investment decisions with access to detailed
+              financial analysis and market trends.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
+            className='bg-[#4d7374] p-8 rounded-lg text-white'>
+            <h3 className='text-xl font-semibold mb-3'>Real-Time Updates</h3>
+            <p className='text-[#d1d7d7]'>
+              Track your portfolio and receive instant alerts on important
+              investment milestones.
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>

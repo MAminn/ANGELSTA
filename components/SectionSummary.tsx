@@ -1,4 +1,7 @@
+'use client'
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import icon1 from "@/public/images/icon-analytics.png";
 import icon2 from "@/public/images/icon-ratings.png";
 import icon3 from "@/public/images/icon-research.png";
@@ -15,7 +18,6 @@ const SectionSummary = () => {
           viewBox='0 0 24 30'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
-          {/* Updated stroke colors to align with brand */}
           <path
             d='M23.185 15.025L12.135 21.4L1 15.025'
             stroke='#87bab3'
@@ -41,83 +43,104 @@ const SectionSummary = () => {
       {/* Main section content */}
       <div className='max-w-5xl mx-auto py-8'>
         {/* Text introduction */}
-        <div className='text-center space-y-4 mb-8'>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className='text-center space-y-4 mb-8'>
           <p className='font-bold text-[#87bab3] uppercase'>Our Approach</p>
           <h2 className='text-3xl font-semibold text-[#d1d7d7] lg:text-4xl'>
-            A Data-Driven Fund for the Modern Investor
+            Secure Your Investments with Blockchain Transparency
           </h2>
-          <h3 className='text-lg text-[#87bab3] lg:text-xl'>
-            Leveraging comprehensive market intelligence to identify valuable
-            investment opportunities.
-          </h3>
-        </div>
+          <p className='text-lg text-[#87bab3] lg:text-xl'>
+            Angelsta’s blockchain-powered marketplace ensures that every
+            transaction is secure, tamper-proof, and fully transparent. This is
+            especially crucial for cross-border transactions in the MENA region,
+            where blockchain technology enhances trust and reliability.
+          </p>
+        </motion.div>
 
         {/* Icon Highlights */}
         <div className='grid grid-cols-1 gap-8 md:grid-cols-3 text-center'>
-          {/* Ratings */}
-          <div className='space-y-2'>
-            <Image
-              src={icon2}
-              width={64}
-              height={64}
-              alt='Ratings Icon'
-              className='mx-auto'
-            />
-            <h4 className='text-xl font-bold text-[#d1d6d6]'>Ratings</h4>
-            <p className='text-sm text-[#87bab3]'>
-              Benchmarked assessments on key market and company indicators.
-            </p>
-          </div>
-          {/* Analytics */}
-          <div className='space-y-2'>
+          {/* Immutable Transactions */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className='space-y-2'>
             <Image
               src={icon1}
               width={64}
               height={64}
-              alt='Analytics Icon'
+              alt='Immutable Transactions Icon'
               className='mx-auto'
             />
-            <h4 className='text-xl font-bold text-[#d1d6d6]'>Analytics</h4>
+            <h4 className='text-xl font-bold text-[#d1d6d6]'>
+              Immutable Transactions
+            </h4>
             <p className='text-sm text-[#87bab3]'>
-              500+ data points per deal, including real-time investment
-              momentum.
+              Every investment is recorded on the blockchain, ensuring complete
+              transparency.
             </p>
-          </div>
-          {/* Research */}
-          <div className='space-y-2'>
+          </motion.div>
+
+          {/* Reduced Risk */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className='space-y-2'>
             <Image
-              src={icon3}
+              src={icon2}
               width={64}
               height={64}
-              alt='Research Icon'
+              alt='Reduced Risk Icon'
               className='mx-auto'
             />
-            <h4 className='text-xl font-bold text-[#d1d6d6]'>Research</h4>
+            <h4 className='text-xl font-bold text-[#d1d6d6]'>Reduced Risk</h4>
             <p className='text-sm text-[#87bab3]'>
-              In-depth analysis by experts and top VCs to drive informed
-              decisions.
+              Blockchain mitigates fraud risk, ensuring that your investment is
+              secure.
             </p>
-          </div>
+          </motion.div>
+
+          {/* Cross-Border Access */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className='space-y-2'>
+            <Image
+              src={icon3}
+              width={54}
+              height={54}
+              alt='Cross-Border Access Icon'
+              className='mx-auto'
+            />
+            <h4 className='text-xl font-bold text-[#d1d6d6]'>
+              Cross-Border Access
+            </h4>
+            <p className='text-sm text-[#87bab3]'>
+              Seamlessly invest across MENA with confidence in secure, verified
+              transactions.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Statistics */}
-        <div className='grid grid-cols-1 gap-6 mt-12 md:grid-cols-3 bg-[#0a272b] p-8 rounded-md text-center'>
-          <div>
-            <h5 className='text-3xl font-bold text-[#d1d6d6]'>3,700+</h5>
-            <p className='text-[#87bab3]'>Equity Raises Reviewed</p>
-          </div>
-          <div>
-            <h5 className='text-3xl font-bold text-[#d1d6d6]'>7,000+</h5>
-            <p className='text-[#87bab3]'>Crowdfunding Campaigns Analyzed</p>
-          </div>
-          <div>
-            <h5 className='text-3xl font-bold text-[#d1d6d6]'>$2.3B+</h5>
-            <p className='text-[#87bab3]'>Capital Raised in Equity</p>
-          </div>
-        </div>
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className='mt-14 text-center'>
+          <Link href='/' className='btn-primary'>
+            Explore Secure Investment Opportunities
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default SectionSummary;
+

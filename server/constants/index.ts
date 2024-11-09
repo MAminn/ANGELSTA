@@ -5,7 +5,7 @@ interface DropdownItem {
 
 interface NavLink {
   name: string;
-  path: string;
+  path?: string;
   submenu?: boolean;
   sublinks?: DropdownItem[];
 }
@@ -36,9 +36,30 @@ export const links: NavLink[] = [
     submenu: false,
   },
   {
-    name: "Market Analysis",
-    path: "/marketAnalysis",
-    submenu: false,
+    name: "Services",
+    submenu: true,
+    sublinks: [
+      {
+        name: "AI Startup Valuation",
+        path: "/services/ai-powered-startup-valuation",
+      },
+      {
+        name: "Blockchain Marketplace",
+        path: "/services/blockchain-marketplace",
+      },
+      {
+        name: "Market & Industry Analysis",
+        path: "/services/market-industry-analysis",
+      },
+      {
+        name: "Investor Portfolio Management",
+        path: "/services/investor-portfolio-management",
+      },
+      {
+        name: "Syndicate Funds",
+        path: "/services/syndicate-funds",
+      },
+    ],
   },
   {
     name: "About Us",
