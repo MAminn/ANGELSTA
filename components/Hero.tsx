@@ -6,7 +6,6 @@ import { GrDatabase } from "react-icons/gr";
 import { ImProfile } from "react-icons/im";
 import { MdEmojiFlags } from "react-icons/md";
 import { FaTableList } from "react-icons/fa6";
-import { LuPackageOpen } from "react-icons/lu";
 
 const Hero: React.FC = () => {
   return (
@@ -41,19 +40,19 @@ const Hero: React.FC = () => {
             </h2>
             <ul className='space-y-5 text-lg'>
               <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <IoSunny size={24} /> Personal Profiles
+                <IoSunny size={24} /> Portfolio Valuation
               </li>
               <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <GrDatabase size={24} /> Portfolio Management
+                <GrDatabase size={24} /> Investment fund modeling
               </li>
               <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <ImProfile size={24} /> Startup Sourcing & Recommendation
+                <ImProfile size={24} /> Blockchain Marketplace
               </li>
               <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <MdEmojiFlags size={24} /> Startup Database
+                <MdEmojiFlags size={24} /> Syndicate Funds
               </li>
               <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#4d7374] transition-colors'>
-                <FaTableList size={24} /> Incubator/Accelerator Management
+                <FaTableList size={24} /> Investment KPI track & Due diligence 
               </li>
             </ul>
           </div>
@@ -72,22 +71,13 @@ const Hero: React.FC = () => {
             </h2>
             <ul className='space-y-5 text-lg'>
               <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#87bab3] transition-colors'>
-                <IoSunny size={24} /> Data Room
+                <IoSunny size={24} /> AI Valuation
               </li>
               <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#87bab3] transition-colors'>
-                <GrDatabase size={24} /> Investors Database
+                <GrDatabase size={24} /> Startup Valuation software
               </li>
               <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#87bab3] transition-colors'>
-                <ImProfile size={24} /> Automated Valuation
-              </li>
-              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#87bab3] transition-colors'>
-                <MdEmojiFlags size={24} /> Demo Days
-              </li>
-              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#87bab3] transition-colors'>
-                <FaTableList size={24} /> Cap Table
-              </li>
-              <li className='flex items-center gap-3 text-[#d1d7d7] hover:text-[#87bab3] transition-colors'>
-                <LuPackageOpen size={24} /> Investor Readiness Package
+                <ImProfile size={24} /> Investment Marketplace
               </li>
             </ul>
           </div>

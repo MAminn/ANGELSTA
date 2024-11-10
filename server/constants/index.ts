@@ -242,7 +242,7 @@ export const transactionCategoryStyles = {
 export const servicesData = [
   {
     id: 1,
-    title: "AI-Powered Startup Valuation",
+    title: "Valuation software",
     description:
       "Get precise and data-driven valuations for startups using AI technology.",
     details:

@@ -32,7 +32,7 @@ const Solutions = () => {
           />
 
           <h3 className='text-3xl font-semibold text-[#87bab3] mb-4'>
-            AI Valuation
+            Software Valuation
           </h3>
           <p className='text-lg mb-4'>
             Get instant, accurate valuations with our AI-powered tools designed
