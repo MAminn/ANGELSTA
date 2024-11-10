@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Sidebar from "@/Sidebar";
 // import Image from "next/image";
 import { auth, signIn } from "@/auth";
-import { SidebarInvestorsLinks } from "@/server/constants";
+import { SidebarStartupLinks } from "@/server/constants";
 
 export default async function RootLayout({
   children,
@@ -19,7 +19,7 @@ export default async function RootLayout({
   return (
     <>
       <main className='flex w-full h-full font-inter z-20 pt-20'>
-        <Sidebar links={SidebarInvestorsLinks} />
+        <Sidebar links={SidebarStartupLinks} />
 
         <div className='flex size-full flex-col'>
           {/* <div className="root-layout fixed top-0 left-0 w-full h-[100px] bg-[#1E2D3D]">

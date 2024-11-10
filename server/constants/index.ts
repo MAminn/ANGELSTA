@@ -10,7 +10,12 @@ interface NavLink {
   sublinks?: DropdownItem[];
 }
 
-interface SidebarLinks {
+interface SidebarInvestorsLinks {
+  label: string;
+  path: string;
+  imgURL: string;
+}
+interface SidebarStartupLinks {
   label: string;
   path: string;
   imgURL: string;
@@ -74,7 +79,7 @@ export const links: NavLink[] = [
   // },
 ];
 
-export const SidebarLinks = [
+export const SidebarInvestorsLinks = [
   {
     imgURL: "/icons/home.svg",
     path: "/portfolio/investments",
@@ -90,6 +95,28 @@ export const SidebarLinks = [
     path: "/portfolio/analytics",
     label: "Analytics",
   },
+  // {
+  //   imgURL: "/icons/money-send.svg",
+  //   path: "/portfolio/taxcenter",
+  //   label: "Tax Center",
+  // },
+];
+export const SidebarStartupLinks = [
+  {
+    imgURL: "/icons/home.svg",
+    path: "\startup-portfolio\manual-valuation",
+    label: "Manual valuation",
+  },
+  {
+    imgURL: "/icons/dollar-circle.svg",
+    path: "\startup-portfolio\ai-valuation",
+    label: "Ai valuation",
+  },
+  // {
+  //   imgURL: "/icons/transaction.svg",
+  //   path: "/startup-portfolio/",
+  //   label: "Analytics",
+  // },
   // {
   //   imgURL: "/icons/money-send.svg",
   //   path: "/portfolio/taxcenter",

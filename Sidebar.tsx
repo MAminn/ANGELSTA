@@ -1,19 +1,27 @@
 "use client";
-
-import { SidebarLinks } from "@/server/constants";
 import { cn } from "@/server/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const Sidebar = () => {
+interface LinkItem {
+  path: string;
+  imgURL: string;
+  label: string;
+}
+
+interface SidebarProps {
+  links: LinkItem[];
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ links }) => {
   const pathname = usePathname();
+
   return (
-    <section className="sidebar bg-[#001d21f3] text-white">
-      <nav className="flex flex-col gap-4">
-        {/* <h3 className='text-3xl sidebar-logo'>{title}</h3> */}
-        {SidebarLinks.map((link, index) => {
+    <section className='sidebar bg-[#001d21f3] text-white'>
+      <nav className='flex flex-col gap-4'>
+        {links.map((link, index) => {
           const isActive =
             pathname === link.path || pathname.startsWith(`${link.path}/`);
           return (
@@ -22,10 +30,9 @@ const Sidebar = () => {
               key={index}
               className={cn("sidebar-link group max-sm:px-4 max-sm:mx-4", {
                 "bg-bank-gradient": isActive,
-              })}
-            >
-              <div className=" flex gap-2">
-                <div className="relative size-6">
+              })}>
+              <div className='flex gap-2'>
+                <div className='relative size-6'>
                   <Image
                     src={link.imgURL}
                     alt={link.label}
@@ -36,10 +43,9 @@ const Sidebar = () => {
                   />
                 </div>
                 <p
-                  className={cn("sidebar-label hidden lg:block ", {
+                  className={cn("sidebar-label hidden lg:block", {
                     "text-white": isActive,
-                  })}
-                >
+                  })}>
                   {link.label}
                 </p>
               </div>
