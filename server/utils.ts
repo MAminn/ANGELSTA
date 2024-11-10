@@ -52,6 +52,12 @@ export function guardVerifiedSession(session?: Session | null) {
     return;
   }
   if (session?.user.isVerified === true) {
-    redirect("/portfolio/investments");
+    if (session.user.role === "startup") {
+      redirect("/startup-portfolio/ai-valuation");
+    }
+
+    if (session.user.role === "investor") {
+      redirect("/portfolio/investments");
+    }
   }
 }

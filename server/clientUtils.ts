@@ -8,6 +8,12 @@ export function useGuardVerifiedSession(session?: Session | null) {
     return;
   }
   if (session?.user.isVerified === true) {
-    router.push("/portfolio/investments");
+    if (session.user.role === "startup") {
+      router.push("/startup-portfolio/ai-valuation");
+    }
+
+    if (session.user.role === "investor") {
+      router.push("/portfolio/investments");
+    }
   }
 }
