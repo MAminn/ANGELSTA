@@ -20,7 +20,7 @@ const MobileNav: React.FC<NavMenuProps> = ({ session }) => {
   const [submenuOpen, setSubmenuOpen] = useState<number | null>(null);
 
   return (
-    <section className='md:hidden'>
+    <section className='lg:hidden'>
       <Sheet>
         <SheetTrigger>
           <FaBars size={24} className='text-[#87bab3]' />
@@ -29,31 +29,59 @@ const MobileNav: React.FC<NavMenuProps> = ({ session }) => {
           <ul className='flex flex-col space-y-6 text-center'>
             {links.map((link, idx) => (
               <li key={idx} className='group'>
-                <button
-                  onClick={() =>
-                    setSubmenuOpen(submenuOpen === idx ? null : idx)
-                  }
-                  className='flex items-center justify-between w-full py-2 text-lg font-medium'>
-                  <span>{link.name}</span>
-                  {link.sublinks && (
-                    <span>
-                      {submenuOpen === idx ? (
-                        <FaChevronUp />
-                      ) : (
-                        <FaChevronDown />
+                {link.path ? (
+                  <SheetClose asChild>
+                    <Link
+                      href={link.path}
+                      onClick={() =>
+                        setSubmenuOpen(submenuOpen === idx ? null : idx)
+                      }
+                      className='flex items-center justify-between w-full py-2 text-lg font-medium'>
+                      <span>{link.name}</span>
+                      {link.sublinks && (
+                        <span>
+                          {submenuOpen === idx ? (
+                            <FaChevronUp />
+                          ) : (
+                            <FaChevronDown />
+                          )}
+                        </span>
                       )}
-                    </span>
-                  )}
-                </button>
+                    </Link>
+                  </SheetClose>
+                ) : (
+                  <button
+                    onClick={() =>
+                      setSubmenuOpen(submenuOpen === idx ? null : idx)
+                    }
+                    className='flex items-center justify-between w-full py-2 text-lg font-medium'>
+                    <span>{link.name}</span>
+                    {link.sublinks && (
+                      <span>
+                        {submenuOpen === idx ? (
+                          <FaChevronUp />
+                        ) : (
+                          <FaChevronDown />
+                        )}
+                      </span>
+                    )}
+                  </button>
+                )}
                 {link.sublinks && submenuOpen === idx && (
                   <div className='flex flex-col mt-2 space-y-2 text-left pl-4'>
                     {link.sublinks.map((sub, subIdx) => (
                       <SheetClose key={subIdx} asChild>
-                        <Link
-                          href={sub.path}
-                          className='block py-1 text-[#87bab3] text-sm'>
-                          {sub.name}
-                        </Link>
+                        {sub.path ? (
+                          <Link
+                            href={sub.path}
+                            className='block py-1 text-[#87bab3] text-sm'>
+                            {sub.name}
+                          </Link>
+                        ) : (
+                          <span className='block py-1 text-[#87bab3] text-sm'>
+                            {sub.name}
+                          </span>
+                        )}
                       </SheetClose>
                     ))}
                   </div>
@@ -61,23 +89,29 @@ const MobileNav: React.FC<NavMenuProps> = ({ session }) => {
               </li>
             ))}
             {session ? (
-              <button
-                onClick={() => signOut()}
-                className='py-4 text-lg text-[#87bab3]'>
-                Sign Out
-              </button>
+              <SheetClose asChild>
+                <button
+                  onClick={() => signOut()}
+                  className='py-4 text-lg text-[#87bab3]'>
+                  Sign Out
+                </button>
+              </SheetClose>
             ) : (
               <>
-                <Link
-                  href='/auth/signin'
-                  className='py-4 text-lg text-[#87bab3]'>
-                  Login
-                </Link>
-                <Link
-                  href='/auth/signup'
-                  className='py-4 text-lg text-[#87bab3]'>
-                  Sing up
-                </Link>
+                <SheetClose asChild>
+                  <Link
+                    href='/auth/signin'
+                    className='py-4 text-lg text-[#87bab3]'>
+                    Login
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href='/auth/signup'
+                    className='py-4 text-lg text-[#87bab3]'>
+                    Sign up
+                  </Link>
+                </SheetClose>
               </>
             )}
           </ul>

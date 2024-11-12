@@ -63,10 +63,24 @@ export const links: NavLink[] = [
     ],
   },
   {
-    name: "About Us",
-    path: "/aboutUs",
-    submenu: false,
+    name: "Solutions",
+    submenu: true,
+    sublinks: [
+      {
+        name: "Software Valuation",
+        path: "/solutions/ai-valuation",
+      },
+      {
+        name: "Blockchain Marketplace",
+        path: "/solutions/blockchain-marketplace",
+      },
+    ],
   },
+  // {
+  //   name: "About Us",
+  //   path: "/aboutUs",
+  //   submenu: false,
+  // },
   // {
   //   name: "Login",
   //   path: "/auth/signin",

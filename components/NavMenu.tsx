@@ -39,7 +39,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ session }) => {
             className='w-full h-full'
           />
         </Link>
-        <ul className='hidden md:flex items-center gap-8'>
+        <ul className='hidden lg:flex items-center gap-8'>
           <NavLinks session={session} />
         </ul>
         <MobileNav session={session} />

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const SectionInvestment = () => {
   return (
-    <section className='pt-12 pb-16 bg-[#0a1622] overflow-hidden lg:pt-32'>
+    <section className='pb-16 bg-[#0a1622] overflow-hidden pt-40'>
       <div className='container mx-auto text-center px-6'>
         {/* Header Section */}
         <motion.div

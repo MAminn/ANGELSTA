@@ -14,7 +14,7 @@ const NavLinks: React.FC<NavMenuProps> = ({ session }) => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
   return (
-    <ul className="flex items-center gap-6 text-lg font-semibold">
+    <ul className="flex items-center gap-6 text-[13px] xl:text-lg font-semibold">
       {links.slice(0, 5).map((link, index) => (
         <li key={index} className="relative group">
           <Link
@@ -32,12 +32,12 @@ const NavLinks: React.FC<NavMenuProps> = ({ session }) => {
             )}
           </Link>
           {link.submenu && openDropdown === index && (
-            <div className="absolute top-full left-0 mt-2 w-48 bg-[#0a272b] p-4 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+            <div className="absolute top-full left-[-20px] mt-2 w-60 bg-[#0a272b] p-4 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               {link.sublinks?.map((subLink) => (
                 <Link
                   key={subLink.name}
                   href={subLink.path}
-                  className="block text-sm text-[#d1d7d7] hover:text-[#87bab3] transition-colors duration-200 py-1"
+                  className="block text-sm text-[#d1d7d7] hover:text-[#87bab3] transition-colors duration-200 py-4"
                 >
                   {subLink.name}
                 </Link>
