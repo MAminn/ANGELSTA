@@ -1,12 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
-import { useGuardVerifiedSession } from "@/server/clientUtils";
 
 const BlockchainMarketplace: React.FC = () => {
-  const session = useSession();
-  useGuardVerifiedSession(session.data);
   return (
     <div className="bg-[#0b1622] text-[#d1d7d7] font-sans pt-16">
       {/* Header Section */}

@@ -19,7 +19,7 @@ const Sidebar: React.FC<SidebarProps> = ({ links }) => {
   const pathname = usePathname();
 
   return (
-    <section className="sidebar bg-[#001d21f3] text-white">
+    <section className="sidebar bg-[#001d21f3] text-white z-50">
       <nav className="flex flex-col gap-4">
         {links.map((link, index) => {
           const isActive =

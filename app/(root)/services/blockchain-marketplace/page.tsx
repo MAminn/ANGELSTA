@@ -2,12 +2,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import blockchainGraphic from "@/public/images/blockchain-graphic.png";
-import { useSession } from "next-auth/react";
-import { useGuardVerifiedSession } from "@/server/clientUtils";
 
 const BlockchainMarketplacePage = () => {
-  const session = useSession();
-  useGuardVerifiedSession(session.data);
   return (
     <div className="bg-[#0a1622] text-[#d1d7d7] font-sans pt-20">
       {/* Hero Section */}

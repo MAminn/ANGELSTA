@@ -1,12 +1,8 @@
 "use client";
-import { useGuardVerifiedSession } from "@/server/clientUtils";
 import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
 import React from "react";
 
 const MarketIndustryAnalysis = () => {
-  const session = useSession();
-  useGuardVerifiedSession(session.data);
   return (
     <section className="relative px-8 py-32 bg-[#0a1622] h-screen">
       <div className="max-w-5xl mx-auto space-y-10 text-center">

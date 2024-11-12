@@ -1,12 +1,8 @@
 "use client";
-import { useGuardVerifiedSession } from "@/server/clientUtils";
 import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
 import React from "react";
 
 const InvestorPortfolioManagement = () => {
-  const session = useSession();
-  useGuardVerifiedSession(session.data);
   return (
     <section className="px-8 py-28 bg-[#0a1622]">
       <div className="max-w-7xl mx-auto space-y-20 text-center lg:text-left">

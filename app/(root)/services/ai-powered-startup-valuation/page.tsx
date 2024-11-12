@@ -1,12 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
-import { useGuardVerifiedSession } from "@/server/clientUtils";
 
 const AIPoweredValuation = () => {
-  const session = useSession();
-  useGuardVerifiedSession(session.data);
   return (
     <section className="px-8 py-32 h-screen bg-[#0a1622] text-gray-100">
       <div className="max-w-5xl mx-auto space-y-10">

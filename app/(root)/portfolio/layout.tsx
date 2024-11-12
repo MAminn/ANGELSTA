@@ -18,7 +18,7 @@ export default async function RootLayout({
 
   return (
     <>
-      <main className="flex w-full h-full font-inter z-20 pt-20">
+      <main className="flex w-full h-full font-inter pt-20">
         <Sidebar links={SidebarInvestorsLinks} />
 
         <div className="flex size-full flex-col">

@@ -1,20 +1,14 @@
-import auth from "@/auth";
 import FlipCard from "@/components/FlipCard";
 import PersonCard from "@/components/PersonCard";
 import aboutUsHero from "@/public/images/aboutUsHero.jpg";
 import person1 from "@/public/images/person1.jpg";
 import person2 from "@/public/images/person2.jpg";
 import world from "@/public/images/world.png";
-import { guardVerifiedSession } from "@/server/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Page = async () => {
-  const session = await auth();
-
-  guardVerifiedSession(session);
-
   return (
     <div className=" flex flex-col justify-center items-center  gap-16 h-full w-full z-20">
       <div className="flex justify-between items-center  w-full h-[480px] bg-[#ebf5ff] max-lg:flex-col ">

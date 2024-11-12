@@ -1,4 +1,3 @@
-import auth from "@/auth";
 import Capital from "@/components/Capital";
 import CTA from "@/components/CTA";
 import Funding from "@/components/Funding";
@@ -6,12 +5,8 @@ import InvestorFooter from "@/components/InvestorFooter";
 import Portoflio from "@/components/Portoflio";
 import SectionInvestment from "@/components/SectionInvestment";
 import SectionSummary from "@/components/SectionSummary";
-import { guardVerifiedSession } from "@/server/utils";
 
 const Investor = async () => {
-  const session = await auth();
-
-  guardVerifiedSession(session);
   return (
     <div className="flex flex-col bg-gray-100 z-20">
       <SectionInvestment />

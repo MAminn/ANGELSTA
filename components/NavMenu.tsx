@@ -24,22 +24,23 @@ const NavMenu: React.FC<NavMenuProps> = ({ session }) => {
 
   return (
     <nav
-      className={`fixed w-full z-50 ${
+      className={`fixed w-full z-40 ${
         isCustomBg
           ? "bg-gradient-to-r from-[#87bab3] to-[#4d7374]"
           : "bg-transparent"
-      }`}>
-      <div className='flex justify-between items-center h-20 w-full pr-6 lg:pr-16 lg:pl-4 bg-opacity-70 backdrop-blur-md text-[#d1d7d7] shadow-md'>
-        <Link href='/' className='flex items-center'>
+      }`}
+    >
+      <div className="flex justify-between items-center h-20 w-full pr-6 lg:pr-16 lg:pl-4 bg-opacity-70 backdrop-blur-md text-[#d1d7d7] shadow-md">
+        <Link href="/" className="flex items-center">
           <Image
             src={mainLogo}
-            alt='mainlogo'
+            alt="mainlogo"
             width={300}
             height={300}
-            className='w-full h-full'
+            className="w-full h-full"
           />
         </Link>
-        <ul className='hidden lg:flex items-center gap-8'>
+        <ul className="hidden lg:flex items-center gap-8">
           <NavLinks session={session} />
         </ul>
         <MobileNav session={session} />

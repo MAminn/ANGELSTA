@@ -8,13 +8,8 @@ import { Fa3 } from "react-icons/fa6";
 import FlipCard2 from "@/components/FlipCard2";
 import FieldCard2 from "@/components/FieldCard2";
 import SwiperContent from "@/components/SwiperContent";
-import { useSession } from "next-auth/react";
-import { useGuardVerifiedSession } from "@/server/clientUtils";
 
 const MarketAnalysis = () => {
-  const session = useSession();
-  useGuardVerifiedSession(session.data);
-
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement | null>(null); // Ref for the menu
 

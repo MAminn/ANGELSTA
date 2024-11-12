@@ -3,12 +3,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import aivaluation from "@/public/images/ai-valuation-graphic.png";
 import React from "react";
-import { useSession } from "next-auth/react";
-import { useGuardVerifiedSession } from "@/server/clientUtils";
 
 const AIValuationPage = () => {
-  const session = useSession();
-  useGuardVerifiedSession(session.data);
   return (
     <section className="px-8 py-28 bg-[#0a1622]">
       <div className="max-w-7xl mx-auto space-y-20">
