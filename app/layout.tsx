@@ -31,12 +31,11 @@ export default async function GlobalLayout({
 }>) {
   const session = await auth();
   return (
-    <html lang="en">
+    <html lang='en'>
       <SessionProvider session={session}>
         <body
-          className={`${montserrat.variable} ${playfairDisplay.variable} antialiased`}
-        >
-          <NavMenu />
+          className={`${montserrat.variable} ${playfairDisplay.variable} antialiased`}>
+          <NavMenu session={session} />
           {children}
         </body>
       </SessionProvider>

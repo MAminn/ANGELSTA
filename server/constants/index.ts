@@ -104,12 +104,12 @@ export const SidebarInvestorsLinks = [
 export const SidebarStartupLinks = [
   {
     imgURL: "/icons/home.svg",
-    path: "\startup-portfolio\manual-valuation",
+    path: "/startup-portfolio/manual-valuation",
     label: "Manual valuation",
   },
   {
     imgURL: "/icons/dollar-circle.svg",
-    path: "\startup-portfolio\ai-valuation",
+    path: "/startup-portfolio/ai-valuation",
     label: "Ai valuation",
   },
   // {
