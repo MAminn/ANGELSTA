@@ -93,46 +93,47 @@ const MobileNav: React.FC<NavMenuProps> = ({ session }) => {
                 )}
               </li>
             ))}
-          </ul>
-          <div className=" flex flex-col justify-end items-end h-[510px]">
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="py-4 text-[40px] text-[#87bab3] cursor-pointer "
-            >
-              <CgProfile />
-            </button>
-            {session ? (
-              <SheetClose asChild>
-                <div className="relative">
-                  {menuOpen && (
-                    <div className="absolute top-[-92px] -left-[218px] mt-2 w-40 bg-white border border-gray-200 shadow-md rounded-xl ">
-                      {/* Arrow pointing to the profile icon */}
-                      <div className="absolute top-1/2 -right-3 transform -translate-y-1/2">
-                        <div className="w-0 h-0 border-t-8 border-b-8 border-l-8 border-transparent border-l-white"></div>
-                      </div>
 
-                      <ul className="py-2 font-semibold flex flex-col justify-start items-start">
-                        <Link
-                          href={`${
-                            session.user?.role === "investor"
-                              ? "/portfolio/investments"
-                              : "/startup/portfolio"
-                          }`}
-                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black-2 border-b-2 border-gray-100"
-                        >
-                          My Profile
-                        </Link>
-                        <li
-                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black-2"
-                          onClick={() => signOut()}
-                        >
-                          Sign Out
-                        </li>
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              </SheetClose>
+            {session ? (
+              <div className="flex justify-end items-end h-[500px]">
+                <button
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  className="py-4 text-4xl text-[#87bab3] cursor-pointer"
+                >
+                  <CgProfile />
+                </button>
+                <SheetClose asChild>
+                  <div className="relative">
+                    {menuOpen && (
+                      <div className="absolute top-[-80px] -left-[215px] mt-2 w-40 bg-white border border-gray-200 shadow-md rounded-xl">
+                        {/* Arrow pointing to the profile icon */}
+                        <div className="absolute top-1/2 -right-3 transform -translate-y-1/2">
+                          <div className="w-0 h-0 border-t-8 border-b-8 border-l-8 border-transparent border-l-white"></div>
+                        </div>
+
+                        <ul className="py-2 text-black-2 font-semibold">
+                          <Link
+                            href={`${
+                              session.user?.role === "investor"
+                                ? "/portfolio/investments"
+                                : "/startup/portfolio"
+                            }`}
+                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                          >
+                            My Profile
+                          </Link>
+                          <li
+                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                            onClick={() => signOut()}
+                          >
+                            Sign Out
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </SheetClose>
+              </div>
             ) : (
               <>
                 <SheetClose asChild>
@@ -153,7 +154,7 @@ const MobileNav: React.FC<NavMenuProps> = ({ session }) => {
                 </SheetClose>
               </>
             )}
-          </div>
+          </ul>
         </SheetContent>
       </Sheet>
     </section>

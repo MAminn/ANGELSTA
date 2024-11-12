@@ -5,6 +5,7 @@ import { signOut } from "next-auth/react";
 import { Session } from "next-auth";
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { CgProfile } from "react-icons/cg";
 
 interface NavMenuProps {
   session: Session | null;
@@ -12,6 +13,7 @@ interface NavMenuProps {
 
 const NavLinks: React.FC<NavMenuProps> = ({ session }) => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <ul className="flex items-center gap-6 text-[13px] xl:text-lg font-semibold">
@@ -47,12 +49,40 @@ const NavLinks: React.FC<NavMenuProps> = ({ session }) => {
         </li>
       ))}
       {session ? (
-        <button
-          onClick={() => signOut()}
-          className="text-[#87bab3] hover:text-[#d1d7d7] transition-all duration-300"
-        >
-          Sign Out
-        </button>
+        <div className="flex justify-end items-end">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="py-4 text-4xl text-[#87bab3] cursor-pointer"
+          >
+            <CgProfile />
+          </button>
+          <div className="relative">
+            {menuOpen && (
+              <div className="absolute -top-[10px] -left-[100px] mt-2 w-40 bg-white border border-gray-200 shadow-md rounded-xl">
+                {/* Arrow pointing to the profile icon */}
+
+                <ul className="py-2 text-black-2 font-semibold flex flex-col justify-start items-center">
+                  <Link
+                    href={`${
+                      session.user?.role === "investor"
+                        ? "/portfolio/investments"
+                        : "/startup/portfolio"
+                    }`}
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer "
+                  >
+                    My Profile
+                  </Link>
+                  <li
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => signOut()}
+                  >
+                    Sign Out
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
       ) : (
         <>
           <Link
