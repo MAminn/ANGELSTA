@@ -95,7 +95,7 @@ const MobileNav: React.FC<NavMenuProps> = ({ session }) => {
             ))}
 
             {session ? (
-              <div className="flex justify-end items-end h-[500px]">
+              <div className="flex justify-end items-end h-[400px]">
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
                   className="py-4 text-4xl text-[#87bab3] cursor-pointer"
