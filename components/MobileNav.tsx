@@ -116,7 +116,7 @@ const MobileNav: React.FC<NavMenuProps> = ({ session }) => {
                             href={`${
                               session.user?.role === "investor"
                                 ? "/portfolio/investments"
-                                : "/startup/portfolio"
+                                : "/startup-portfolio/ai-valuation"
                             }`}
                             className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                           >
